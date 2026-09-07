@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#060D1A" />
+  <title>Meia Maratona do Sol 2026 — Digital Experience</title>
+  <meta name="description" content="Proposta refinada da experiência digital da Meia Maratona do Sol 2026 — da inspiração ao próximo desafio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Outfit','sans-serif'],
+            sans: ['Plus Jakarta Sans','sans-serif'],
+          },
+          colors: {
+            sun: '#FFBE00',
+            orange: '#FF6600',
+            night: '#0B1C33',
+            petrol: '#060D1A',
+            sky: '#4FADDB',
+            green: '#41AB34',
+            sand: '#FFE6B2'
+          },
+          transitionDuration: { 400: '400ms' }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root{--nav-h:76px;--ease:cubic-bezier(.22,1,.36,1)}
+    *{box-sizing:border-box}
+    html{background:#060D1A;scroll-padding-top:calc(var(--nav-h) + 16px)}
+    body{margin:0;background:#060D1A;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden}
+    ::selection{background:#FFBE00;color:#060D1A}
+    a,button{ -webkit-tap-highlight-color: transparent; }
+    :focus-visible{outline:2px solid #FFBE00;outline-offset:4px}
+    .container-wide{width:min(100% - 40px,1440px);margin-inline:auto}
+    .container-copy{width:min(100% - 40px,1180px);margin-inline:auto}
+    .screen-section{min-height:calc(100svh - var(--nav-h));display:flex;align-items:center;position:relative;overflow:hidden}
+    .nav-link{position:relative}
+    .nav-link::after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:currentColor;transition:right 400ms var(--ease)}
+    .nav-link:hover::after,.nav-link:focus-visible::after{right:0}
+    .text-link{position:relative;display:inline-flex;align-items:center;gap:.5rem}
+    .text-link::after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:currentColor;transition:right 400ms var(--ease)}
+    .text-link:hover::after{right:0}
+    .cta{transition:transform 400ms var(--ease),background 400ms var(--ease),color 400ms var(--ease),border-color 400ms var(--ease)}
+    .cta:hover{transform:translateY(-2px)}
+    .grain{pointer-events:none;position:absolute;inset:0;opacity:.055;mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
+    .hero-mask{mask-image:linear-gradient(to bottom,black 0%,black 78%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,black 0%,black 78%,transparent 100%)}
+    .hero-title{font-size:clamp(4rem,10.4vw,11rem);line-height:.78;letter-spacing:-.065em}
+    .eyebrow{font-family:'Outfit',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-weight:600;font-size:.72rem}
+    .section-kicker{font-family:'Outfit',sans-serif;text-transform:uppercase;letter-spacing:.18em;font-weight:600;font-size:.72rem}
+    .display-tight{font-family:'Outfit',sans-serif;letter-spacing:-.045em;line-height:.92}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity 800ms var(--ease),transform 800ms var(--ease)}
+    .reveal.is-visible{opacity:1;transform:none}
+    .reveal-delay-1{transition-delay:90ms}.reveal-delay-2{transition-delay:180ms}.reveal-delay-3{transition-delay:270ms}
+    .race-card{transition:transform 400ms var(--ease),border-color 400ms var(--ease),background 400ms var(--ease)}
+    .race-card:hover{transform:translateY(-6px);border-color:rgba(255,190,0,.55)}
+    .race-card.is-selected{background:#FFBE00;color:#060D1A;border-color:#FFBE00}
+    .race-card.is-selected .race-muted{color:rgba(6,13,26,.64)}
+    .race-card.is-selected .race-icon{background:#060D1A;color:#FFBE00}
+    .glass{background:rgba(6,13,26,.62);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    .hotspot{transition:transform 350ms var(--ease),background 350ms var(--ease),color 350ms var(--ease)}
+    .hotspot:hover,.hotspot.is-active{transform:scale(1.08);background:#FFBE00;color:#060D1A}
+    .metric{font-variant-numeric:tabular-nums}
+    .scroll-progress{position:fixed;top:0;left:0;height:2px;background:#FFBE00;width:0;z-index:100}
+    .soft-grid{background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:64px 64px}
+    .music-line{background:linear-gradient(90deg,#FFBE00,#FF6600,#4FADDB,#41AB34)}
+    .snap-zone{scroll-margin-top:var(--nav-h)}
+    @media (min-width:1024px) and (prefers-reduced-motion:no-preference){main{scroll-snap-type:y proximity}.snap-zone{scroll-snap-align:start}}
+    @media (max-width:767px){:root{--nav-h:64px}.container-wide,.container-copy{width:min(100% - 28px,1440px)}.screen-section{min-height:auto}.hero-title{font-size:clamp(4.1rem,22vw,7rem)} }
+
+    /* ---------- EXPERIENCE REFINEMENT ---------- */
+    .phase-pill{display:inline-flex;align-items:center;gap:.55rem;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:.45rem .75rem;background:rgba(6,13,26,.28);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+    .phase-dot{width:.45rem;height:.45rem;border-radius:50%;background:#FFBE00;box-shadow:0 0 0 6px rgba(255,190,0,.1)}
+    .manifesto{min-height:190svh;background:#060D1A;position:relative}
+    .manifesto-sticky{position:sticky;top:var(--nav-h);height:calc(100svh - var(--nav-h));display:grid;align-items:center;overflow:hidden}
+    .distance-giant{font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(7rem,24vw,25rem);line-height:.68;letter-spacing:-.085em;color:rgba(255,255,255,.045);white-space:nowrap;user-select:none}
+    .manifesto-step{position:absolute;left:0;right:0;opacity:0;transform:translateY(22px);transition:opacity 600ms var(--ease),transform 600ms var(--ease);pointer-events:none}
+    .manifesto-step.is-active{opacity:1;transform:none}
+    .manifesto-orbit{position:absolute;width:min(55vw,760px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,190,0,.13);right:-12%;top:50%;transform:translateY(-50%)}
+    .manifesto-orbit::before,.manifesto-orbit::after{content:'';position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.07);inset:12%}.manifesto-orbit::after{inset:25%}
+    .route-shell{position:relative;overflow:hidden;border-radius:34px;background:#0B1C33;border:1px solid rgba(255,255,255,.1)}
+    .route-path{stroke-dasharray:1300;stroke-dashoffset:1300;transition:stroke-dashoffset 1800ms var(--ease)}
+    .route-shell.is-visible .route-path{stroke-dashoffset:0}
+    .route-stop{transition:transform 400ms var(--ease),background 400ms var(--ease),color 400ms var(--ease),border-color 400ms var(--ease)}
+    .route-stop:hover,.route-stop.is-active{transform:translateY(-3px);background:#FFBE00;color:#060D1A;border-color:#FFBE00}
+    .route-stop.is-active .route-stop-muted{color:rgba(6,13,26,.58)}
+    .launch-scene{position:relative;min-height:calc(100svh - var(--nav-h));overflow:hidden;background:#060D1A}
+    .launch-photo{transition:transform 1600ms var(--ease),filter 1200ms var(--ease)}
+    .launch-scene.is-running .launch-photo{transform:scale(1.075);filter:brightness(1.12) saturate(1.08)}
+    .launch-vignette{transition:background 900ms var(--ease)}
+    .launch-scene.is-running .launch-vignette{background:radial-gradient(circle at 55% 55%,rgba(255,190,0,.06),rgba(6,13,26,.86) 72%)}
+    .launch-count{font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(9rem,30vw,32rem);line-height:.65;letter-spacing:-.09em;text-shadow:0 20px 80px rgba(0,0,0,.48)}
+    .launch-flash{position:absolute;inset:0;background:#FFBE00;opacity:0;pointer-events:none}
+    .launch-flash.go{animation:launchFlash 760ms var(--ease)}
+    @keyframes launchFlash{0%{opacity:0}22%{opacity:.95}100%{opacity:0}}
+    .companion-panel{background:linear-gradient(155deg,#0B1C33 0%,#060D1A 70%);box-shadow:0 30px 80px rgba(6,13,26,.18)}
+    .journey-step{position:relative;padding-left:2rem}
+    .journey-step::before{content:'';position:absolute;left:.18rem;top:.42rem;width:.62rem;height:.62rem;border-radius:999px;border:2px solid rgba(255,255,255,.28);background:#060D1A}
+    .journey-step::after{content:'';position:absolute;left:.48rem;top:1.2rem;bottom:-1.4rem;width:1px;background:rgba(255,255,255,.13)}
+    .journey-step:last-child::after{display:none}
+    .journey-step.is-done::before{background:#FFBE00;border-color:#FFBE00;box-shadow:0 0 0 5px rgba(255,190,0,.09)}
+    .result-number{font-family:'Outfit',sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.055em}
+    .legacy-card{transition:transform 500ms var(--ease),border-color 500ms var(--ease)}
+    .legacy-card:hover{transform:translateY(-5px);border-color:rgba(255,190,0,.4)}
+    .quiet-link{position:relative;transition:color 400ms var(--ease)}
+    .quiet-link::after{content:'';position:absolute;left:0;bottom:-5px;width:100%;height:1px;transform:scaleX(0);transform-origin:right;background:currentColor;transition:transform 400ms var(--ease)}
+    .quiet-link:hover::after{transform:scaleX(1);transform-origin:left}
+    @media(max-width:767px){.manifesto{min-height:160svh}.manifesto-orbit{width:92vw;right:-50%;opacity:.65}.launch-scene{min-height:92svh}.route-shell{border-radius:26px}}
+
+    @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
+
+  <header id="siteHeader" class="fixed inset-x-0 top-0 z-50 transition-all duration-400">
+    <div class="container-wide h-[76px] max-md:h-16 flex items-center justify-between gap-6">
+      <a href="#inicio" class="flex items-center gap-3 shrink-0" aria-label="Meia Maratona do Sol — início">
+        <img src="assets/logo-mark.png" alt="" class="w-10 h-10 object-contain" />
+        <div class="hidden sm:block leading-none">
+          <span class="font-display font-extrabold text-[13px] tracking-[.03em] uppercase">Meia Maratona</span>
+          <span class="block font-display font-medium text-[11px] tracking-[.16em] uppercase text-white/55 mt-1">do Sol · 2026</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7 text-[13px] font-semibold" aria-label="Navegação principal">
+        <a class="nav-link" href="#provas">Provas</a>
+        <a class="nav-link" href="#experiencia">Experiência</a>
+        <a class="nav-link" href="#percurso">Percurso</a>
+        <a class="nav-link" href="#expo">Expo</a>
+        <a class="nav-link" href="#prepare">Prepare-se</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#prepare" class="hidden md:inline-flex text-[12px] font-semibold nav-link">Minha Meia</a>
+        <a href="#provas" class="cta inline-flex items-center gap-2 rounded-full bg-sun px-5 py-3 text-[12px] font-bold text-petrol">
+          Escolher prova <i class="ph-bold ph-arrow-up-right text-[14px]"></i>
+        </a>
+        <button id="menuBtn" class="lg:hidden w-10 h-10 rounded-full border border-white/15 grid place-items-center" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+          <i class="ph ph-list text-xl"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden lg:hidden glass border-t border-white/10">
+      <div class="container-wide py-6 grid gap-5 text-base font-semibold">
+        <a href="#provas">Provas</a><a href="#experiencia">Experiência</a><a href="#percurso">Percurso</a><a href="#expo">Expo</a><a href="#prepare">Prepare-se</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 HERO -->
+    <section id="inicio" class="snap-zone relative min-h-[100svh] bg-petrol overflow-hidden">
+      <div class="absolute inset-0 hero-mask">
+        <img id="heroImg" src="assets/hero-crowd.jpg" alt="Multidão de atletas na Arena das Dunas durante a Meia Maratona do Sol" class="w-full h-full object-cover object-center scale-[1.04]" />
+        <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,13,26,.94)_0%,rgba(6,13,26,.56)_45%,rgba(6,13,26,.08)_100%)] max-md:bg-[linear-gradient(180deg,rgba(6,13,26,.35)_0%,rgba(6,13,26,.8)_55%,#060D1A_100%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_18%,rgba(255,190,0,.22),transparent_28%)]"></div>
+      </div>
+      <div class="grain"></div>
+
+      <div class="relative z-10 container-wide pt-[calc(var(--nav-h)+54px)] pb-10 min-h-[100svh] flex flex-col justify-between">
+        <div class="max-w-[1100px]">
+          <div class="reveal flex flex-wrap items-center gap-x-4 gap-y-2 text-white/74 mb-8">
+            <span class="eyebrow text-sun">19—20 setembro · Natal/RN</span>
+            <span id="phaseHero" class="phase-pill text-[10px] uppercase tracking-[.12em] font-bold"><span class="phase-dot"></span><span id="phaseHeroText">Sua jornada já começou</span></span>
+            <span class="h-px w-12 bg-white/25"></span>
+            <span class="text-xs font-semibold">5K · 10K · 21K · 26K · 31K</span>
+          </div>
+          <h1 class="hero-title font-display font-black uppercase max-w-[1150px]">
+            <span class="reveal block">O Brasil</span>
+            <span class="reveal reveal-delay-1 block text-sun">corre aqui.</span>
+          </h1>
+          <div class="reveal reveal-delay-2 mt-8 md:mt-10 flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
+            <p class="max-w-[520px] text-[17px] md:text-xl leading-relaxed text-white/78">
+              Dois dias para transformar treino em memória. Um estádio de Copa, Natal em movimento e uma chegada que muda a pergunta de “será que eu consigo?” para “qual é o próximo?”.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a id="heroPrimaryCta" href="#provas" class="cta inline-flex items-center gap-3 rounded-full bg-sun text-petrol px-6 py-4 font-bold text-sm"><span id="heroPrimaryText">Escolha sua prova</span> <i class="ph-bold ph-arrow-down"></i></a>
+              <a href="#experiencia" class="cta inline-flex items-center gap-3 rounded-full border border-white/25 bg-white/[.04] px-6 py-4 font-semibold text-sm">Viver a experiência</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-16 flex items-end justify-between gap-6 border-t border-white/14 pt-5">
+          <div class="flex gap-8 md:gap-12 overflow-x-auto pb-1">
+            <div class="shrink-0"><span class="block text-[10px] uppercase tracking-[.18em] text-white/45">Local</span><b class="text-sm">Arena das Dunas</b></div>
+            <div class="shrink-0"><span class="block text-[10px] uppercase tracking-[.18em] text-white/45">Edição</span><b class="text-sm">2026</b></div>
+            <div class="shrink-0"><span class="block text-[10px] uppercase tracking-[.18em] text-white/45">Cidade</span><b class="text-sm">Natal · RN</b></div>
+            <div class="shrink-0"><span class="block text-[10px] uppercase tracking-[.18em] text-white/45">Agora</span><b id="eventCountdown" class="text-sm">Sua jornada começou</b></div>
+          </div>
+          <a href="#credenciais" class="hidden md:flex items-center gap-2 text-xs text-white/60 text-link">Role para descobrir <i class="ph ph-arrow-down"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 PROVAS / PROOF -->
+    <section id="credenciais" class="snap-zone bg-white text-petrol border-y border-black/5">
+      <div class="container-wide py-8 md:py-10 grid grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-7">
+        <div class="reveal"><div class="text-[11px] uppercase tracking-[.16em] text-black/45">Escala 2025</div><div class="font-display text-3xl md:text-4xl font-extrabold mt-2">16 mil</div><div class="text-xs text-black/55 mt-1">atletas inscritos</div></div>
+        <div class="reveal reveal-delay-1"><div class="text-[11px] uppercase tracking-[.16em] text-black/45">Arena</div><div class="font-display text-3xl md:text-4xl font-extrabold mt-2">60 mil</div><div class="text-xs text-black/55 mt-1">passagens em 4 dias</div></div>
+        <div class="reveal reveal-delay-2"><div class="text-[11px] uppercase tracking-[.16em] text-black/45">Performance</div><div class="font-display text-xl md:text-2xl font-extrabold mt-3">Selo Ouro</div><div class="text-xs text-black/55 mt-1">CBAt</div></div>
+        <div class="reveal reveal-delay-2"><div class="text-[11px] uppercase tracking-[.16em] text-black/45">Percurso</div><div class="font-display text-xl md:text-2xl font-extrabold mt-3">World Athletics</div><div class="text-xs text-black/55 mt-1">referência técnica</div></div>
+        <div class="reveal reveal-delay-3 col-span-2 lg:col-span-1"><div class="text-[11px] uppercase tracking-[.16em] text-black/45">Identidade</div><div class="font-display text-xl md:text-2xl font-extrabold mt-3">Patrimônio do RN</div><div class="text-xs text-black/55 mt-1">cultura + esporte</div></div>
+      </div>
+    </section>
+
+    <!-- 03 MANIFESTO / THE RUN STARTS BEFORE -->
+    <section id="manifesto" class="manifesto snap-zone" aria-label="A corrida começa antes da largada">
+      <div class="manifesto-sticky">
+        <div class="manifesto-orbit" aria-hidden="true"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_16%_50%,rgba(255,102,0,.12),transparent_32%)]"></div>
+        <div class="container-wide relative w-full h-full flex items-center">
+          <div class="distance-giant absolute left-[-2vw] top-1/2 -translate-y-1/2">21,097</div>
+          <div class="relative z-10 max-w-[900px]">
+            <div class="section-kicker text-sun mb-7">Antes do cronômetro</div>
+            <div id="manifestoSteps" class="relative min-h-[250px] md:min-h-[320px]">
+              <div class="manifesto-step is-active" data-step="0"><p class="display-tight text-5xl md:text-7xl lg:text-8xl font-extrabold">Você não corre 21,097 km no dia da prova.</p></div>
+              <div class="manifesto-step" data-step="1"><p class="display-tight text-5xl md:text-7xl lg:text-8xl font-extrabold">Você começa meses antes.</p></div>
+              <div class="manifesto-step" data-step="2"><p class="display-tight text-5xl md:text-7xl lg:text-8xl font-extrabold">E termina diferente.</p></div>
+            </div>
+          </div>
+          <div class="absolute bottom-8 left-5 md:left-auto md:right-10 text-[10px] uppercase tracking-[.16em] text-white/36">Treino → compromisso → presença → conquista</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="provas" class="snap-zone bg-[#F5F1E8] text-petrol py-20 md:py-28">
+      <div class="container-wide">
+        <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-12 lg:gap-20 items-end mb-14">
+          <div class="reveal">
+            <div class="section-kicker text-orange">Seu próximo objetivo</div>
+            <h2 class="display-tight text-5xl md:text-7xl font-extrabold mt-4">Escolha onde você quer chegar.</h2>
+          </div>
+          <div class="reveal reveal-delay-1 lg:pb-2">
+            <p class="text-black/62 text-base md:text-lg leading-relaxed max-w-2xl">A distância não é só um número. Ela representa o estágio atual da sua jornada. Escolha uma prova e veja a experiência se reorganizar ao redor do seu objetivo.</p>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3" role="list" aria-label="Provas disponíveis">
+          <button class="race-card text-left rounded-[26px] border border-black/10 p-5 md:p-6 min-h-[260px] flex flex-col justify-between bg-white" data-race="5K" data-sub="Comece com uma meta que cabe na sua rotina." data-date="19 set · sábado">
+            <div><span class="race-icon inline-grid place-items-center w-10 h-10 rounded-full bg-black/5 text-lg"><i class="ph ph-sun-horizon"></i></span><div class="race-muted text-[11px] mt-5 uppercase tracking-[.16em] text-black/45">Entrada</div></div><div><div class="font-display text-5xl font-extrabold">5K</div><div class="race-muted text-sm text-black/52 mt-2">Comece.</div></div>
+          </button>
+          <button class="race-card text-left rounded-[26px] border border-black/10 p-5 md:p-6 min-h-[260px] flex flex-col justify-between bg-white" data-race="10K" data-sub="Transforme consistência em evolução mensurável." data-date="19 set · sábado">
+            <div><span class="race-icon inline-grid place-items-center w-10 h-10 rounded-full bg-black/5 text-lg"><i class="ph ph-trend-up"></i></span><div class="race-muted text-[11px] mt-5 uppercase tracking-[.16em] text-black/45">Progressão</div></div><div><div class="font-display text-5xl font-extrabold">10K</div><div class="race-muted text-sm text-black/52 mt-2">Avance.</div></div>
+          </button>
+          <button class="race-card is-selected text-left rounded-[26px] border p-5 md:p-6 min-h-[290px] flex flex-col justify-between lg:-translate-y-4" data-race="21K" data-sub="A prova que dá nome ao evento. Técnica, emocional e inesquecível." data-date="20 set · domingo">
+            <div><span class="race-icon inline-grid place-items-center w-10 h-10 rounded-full text-lg"><i class="ph-fill ph-star"></i></span><div class="race-muted text-[11px] mt-5 uppercase tracking-[.16em]">A Meia do Sol</div></div><div><div class="font-display text-6xl font-black">21K</div><div class="race-muted text-sm mt-2">Supere.</div></div>
+          </button>
+          <button class="race-card text-left rounded-[26px] border border-black/10 p-5 md:p-6 min-h-[260px] flex flex-col justify-between bg-white" data-race="26K" data-sub="Dois dias, duas largadas e um desafio maior que a soma das provas." data-date="19 + 20 set">
+            <div><span class="race-icon inline-grid place-items-center w-10 h-10 rounded-full bg-black/5 text-lg"><i class="ph ph-stack"></i></span><div class="race-muted text-[11px] mt-5 uppercase tracking-[.16em] text-black/45">Desafio</div></div><div><div class="font-display text-5xl font-extrabold">26K</div><div class="race-muted text-sm text-black/52 mt-2">Teste-se.</div></div>
+          </button>
+          <button class="race-card text-left rounded-[26px] border border-black/10 p-5 md:p-6 min-h-[260px] flex flex-col justify-between bg-white" data-race="31K" data-sub="O maior desafio da edição: resistência, estratégia e presença." data-date="19 + 20 set">
+            <div><span class="race-icon inline-grid place-items-center w-10 h-10 rounded-full bg-black/5 text-lg"><i class="ph ph-mountains"></i></span><div class="race-muted text-[11px] mt-5 uppercase tracking-[.16em] text-black/45">Máximo</div></div><div><div class="font-display text-5xl font-extrabold">31K</div><div class="race-muted text-sm text-black/52 mt-2">Vá além.</div></div>
+          </button>
+        </div>
+
+        <div id="raceDetail" class="mt-6 rounded-[26px] border border-black/10 bg-petrol text-white p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 transition-all duration-400">
+          <div><span id="raceDate" class="text-[11px] uppercase tracking-[.16em] text-sun">20 set · domingo</span><h3 class="font-display text-3xl md:text-4xl font-extrabold mt-2"><span id="raceName">21K</span> — sua próxima linha de chegada</h3><p id="raceSub" class="text-white/62 max-w-2xl mt-2">A prova que dá nome ao evento. Técnica, emocional e inesquecível.</p></div>
+          <a href="#final" class="cta shrink-0 inline-flex justify-center items-center gap-2 rounded-full bg-sun text-petrol px-6 py-4 font-bold text-sm">Quero essa prova <i class="ph-bold ph-arrow-up-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 EXPERIENCE -->
+    <section id="experiencia" class="snap-zone screen-section bg-night text-white">
+      <div class="absolute inset-0"><img src="assets/arena-crowd.jpg" alt="Arena das Dunas ocupada por atletas" class="w-full h-full object-cover opacity-45"/><div class="absolute inset-0 bg-[linear-gradient(90deg,#060D1A_4%,rgba(6,13,26,.82)_43%,rgba(6,13,26,.25)_100%)]"></div></div>
+      <div class="grain"></div>
+      <div class="relative z-10 container-wide py-20 md:py-24 w-full grid lg:grid-cols-[.95fr_1.05fr] gap-14 items-end">
+        <div class="reveal max-w-3xl">
+          <div class="section-kicker text-sun">A experiência</div>
+          <h2 class="display-tight text-5xl md:text-7xl lg:text-8xl font-extrabold mt-4">Mais do que uma linha de chegada.</h2>
+          <p class="mt-7 text-white/68 text-lg leading-relaxed max-w-xl">A Meia do Sol acontece em camadas: estádio, cidade, música, feira, família e performance. O site deve revelar essas camadas na mesma ordem em que o atleta começa a desejá-las.</p>
+        </div>
+        <div class="reveal reveal-delay-1 grid sm:grid-cols-2 gap-px bg-white/14 border border-white/14 rounded-[30px] overflow-hidden">
+          <a href="#arena" class="group p-6 md:p-8 bg-petrol/80 hover:bg-white/[.08] transition-colors duration-400"><i class="ph ph-stadium text-3xl text-sun"></i><h3 class="font-display text-2xl font-bold mt-8">Arena das Dunas</h3><p class="text-sm text-white/55 mt-2">Palco da largada, chegada, Expo e memória coletiva.</p><span class="text-link text-xs mt-5 text-sun">Explorar <i class="ph ph-arrow-right"></i></span></a>
+          <div class="p-6 md:p-8 bg-petrol/80"><i class="ph ph-music-notes text-3xl text-orange"></i><h3 class="font-display text-2xl font-bold mt-8">Rota Musical</h3><p class="text-sm text-white/55 mt-2">Quando a cultura potiguar corre ao lado do atleta.</p></div>
+          <div class="p-6 md:p-8 bg-petrol/80"><i class="ph ph-map-trifold text-3xl text-sky"></i><h3 class="font-display text-2xl font-bold mt-8">Natal</h3><p class="text-sm text-white/55 mt-2">Destination running: viajar também faz parte da prova.</p></div>
+          <a href="#expo" class="group p-6 md:p-8 bg-petrol/80 hover:bg-white/[.08] transition-colors duration-400"><i class="ph ph-storefront text-3xl text-green"></i><h3 class="font-display text-2xl font-bold mt-8">Expo Meia do Sol</h3><p class="text-sm text-white/55 mt-2">O encontro entre corredores, marcas, conteúdo e negócios.</p><span class="text-link text-xs mt-5 text-sun">Conhecer <i class="ph ph-arrow-right"></i></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 CITY AS INTERFACE -->
+    <section id="percurso" class="snap-zone bg-petrol text-white py-20 md:py-28">
+      <div class="container-wide">
+        <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-12 items-end mb-12">
+          <div class="reveal"><div class="section-kicker text-sky">21K por Natal</div><h2 class="display-tight text-5xl md:text-7xl font-extrabold mt-4">A cidade não é cenário. Ela corre com você.</h2></div>
+          <p class="reveal reveal-delay-1 text-white/60 text-lg leading-relaxed max-w-xl lg:justify-self-end">O percurso deixa de ser apenas um mapa técnico e passa a criar antecipação. O atleta reconhece marcos, entende a progressão e imagina a chegada antes mesmo de viajar.</p>
+        </div>
+        <div id="routeShell" class="route-shell reveal p-6 md:p-10 lg:p-12">
+          <div class="absolute inset-0 opacity-20 soft-grid"></div>
+          <div class="relative z-10 grid lg:grid-cols-[1.2fr_.8fr] gap-10 lg:gap-16">
+            <div>
+              <div class="flex items-end justify-between gap-6"><div><span class="text-[10px] uppercase tracking-[.16em] text-white/38">Distância assinatura</span><div class="font-display text-[clamp(5rem,14vw,10rem)] font-black leading-[.72] tracking-[-.07em] mt-3">21,097</div></div><span class="hidden sm:block font-display text-2xl text-sun font-bold pb-2">KM</span></div>
+              <svg viewBox="0 0 960 300" class="w-full h-auto mt-8" role="img" aria-label="Representação conceitual da jornada do percurso pela cidade">
+                <path d="M40 216 C160 65, 290 258, 410 126 S650 52, 755 175 S860 248, 924 86" fill="none" stroke="rgba(255,255,255,.09)" stroke-width="11" stroke-linecap="round"/>
+                <path class="route-path" d="M40 216 C160 65, 290 258, 410 126 S650 52, 755 175 S860 248, 924 86" fill="none" stroke="#FFBE00" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="40" cy="216" r="11" fill="#FFBE00"/><circle cx="410" cy="126" r="11" fill="#FF6600"/><circle cx="755" cy="175" r="11" fill="#4FADDB"/><circle cx="924" cy="86" r="11" fill="#41AB34"/>
+              </svg>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3">
+                <button class="route-stop is-active text-left rounded-2xl border border-white/12 p-4" data-route="arena"><b class="block text-sm">Arena</b><span class="route-stop-muted text-[11px] text-white/42 mt-1 block">O ritual começa</span></button>
+                <button class="route-stop text-left rounded-2xl border border-white/12 p-4" data-route="cidade"><b class="block text-sm">Natal</b><span class="route-stop-muted text-[11px] text-white/42 mt-1 block">A cidade abre</span></button>
+                <button class="route-stop text-left rounded-2xl border border-white/12 p-4" data-route="costeira"><b class="block text-sm">Via Costeira</b><span class="route-stop-muted text-[11px] text-white/42 mt-1 block">O horizonte acompanha</span></button>
+                <button class="route-stop text-left rounded-2xl border border-white/12 p-4" data-route="retorno"><b class="block text-sm">Arena</b><span class="route-stop-muted text-[11px] text-white/42 mt-1 block">A conquista ganha palco</span></button>
+              </div>
+            </div>
+            <div class="flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-white/10 pt-8 lg:pt-0 lg:pl-10">
+              <div><span id="routeEyebrow" class="text-[10px] uppercase tracking-[.16em] text-sun">O começo</span><h3 id="routeTitle" class="font-display text-3xl md:text-4xl font-extrabold mt-3">A Arena transforma espera em ritual.</h3><p id="routeText" class="text-white/56 leading-relaxed mt-5">Antes de correr pela cidade, o atleta sente a escala do evento, encontra sua onda e entende que já entrou na experiência.</p></div>
+              <a href="#momento" class="quiet-link mt-10 text-sm font-bold text-sun self-start">Sentir a largada <i class="ph ph-arrow-down ml-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 ARENA -->
+    <section id="arena" class="snap-zone relative bg-petrol text-white py-20 md:py-28">
+      <div class="container-wide">
+        <div class="reveal grid lg:grid-cols-[.72fr_1.28fr] gap-12 items-end mb-10">
+          <div><div class="section-kicker text-orange">O palco</div><h2 class="display-tight text-5xl md:text-7xl font-extrabold mt-4">A Arena não é endereço. É parte da história.</h2></div>
+          <p class="text-white/60 text-base md:text-lg leading-relaxed max-w-xl lg:justify-self-end">A interface trata o estádio como elemento espacial da experiência. Em vez de uma galeria genérica, o atleta entende onde cada momento acontece e por que aquele lugar muda a escala da prova.</p>
+        </div>
+
+        <div class="reveal relative rounded-[34px] overflow-hidden min-h-[560px] md:min-h-[680px] border border-white/10">
+          <img src="assets/arena-wide.jpg" alt="Vista ampla da Arena das Dunas" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-petrol via-petrol/10 to-transparent"></div>
+          <button class="hotspot is-active absolute left-[18%] top-[54%] w-11 h-11 rounded-full bg-white text-petrol font-bold shadow-xl" data-hotspot="largada" aria-label="Ver largada">01</button>
+          <button class="hotspot absolute left-[54%] top-[65%] w-11 h-11 rounded-full bg-white text-petrol font-bold shadow-xl" data-hotspot="chegada" aria-label="Ver chegada">02</button>
+          <button class="hotspot absolute right-[14%] top-[34%] w-11 h-11 rounded-full bg-white text-petrol font-bold shadow-xl" data-hotspot="expo" aria-label="Ver Expo">03</button>
+          <div class="absolute left-5 right-5 bottom-5 md:left-8 md:right-auto md:bottom-8 glass rounded-[24px] border border-white/10 p-5 md:p-6 md:w-[430px]">
+            <span id="hotspotIndex" class="text-[10px] uppercase tracking-[.16em] text-sun">01 · Largada</span>
+            <h3 id="hotspotTitle" class="font-display text-2xl md:text-3xl font-bold mt-2">O primeiro passo já acontece em grande escala.</h3>
+            <p id="hotspotText" class="text-sm text-white/58 mt-3 leading-relaxed">A largada dentro do complexo da Arena cria orientação, segurança operacional e uma percepção de evento que começa antes do cronômetro.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 THE MOMENT -->
+    <section id="momento" class="snap-zone launch-scene" aria-label="O momento da largada">
+      <img src="assets/arena-crowd.jpg" alt="Atletas reunidos na Arena das Dunas" class="launch-photo absolute inset-0 w-full h-full object-cover opacity-72"/>
+      <div class="launch-vignette absolute inset-0 bg-[radial-gradient(circle_at_55%_55%,rgba(255,190,0,.02),rgba(6,13,26,.92)_72%)]"></div>
+      <div class="grain"></div><div id="launchFlash" class="launch-flash"></div>
+      <div class="relative z-10 container-wide min-h-[calc(100svh-var(--nav-h))] py-16 flex flex-col justify-between">
+        <div class="reveal flex items-center justify-between gap-8"><div><div class="section-kicker text-sun">O momento</div><p class="text-white/55 text-sm mt-2">Cinco segundos que justificam meses de preparação.</p></div><span class="hidden md:block text-[10px] uppercase tracking-[.16em] text-white/35">Sem autoplay. Você escolhe entrar.</span></div>
+        <div class="reveal text-center py-14">
+          <div id="launchCount" class="launch-count">5</div>
+          <p id="launchMessage" class="display-tight text-3xl md:text-5xl font-bold max-w-3xl mx-auto mt-8">Antes da largada, o mundo parece ficar em silêncio.</p>
+        </div>
+        <div class="reveal flex flex-col md:flex-row md:items-center justify-between gap-6 border-t border-white/14 pt-6">
+          <button id="launchBtn" class="cta inline-flex items-center justify-center gap-3 rounded-full bg-sun text-petrol px-7 py-4 font-bold text-sm self-start"><i class="ph-fill ph-play"></i><span>Viver a largada</span></button>
+          <p class="text-white/45 text-xs max-w-md md:text-right">A experiência final poderá incorporar captação sonora real do evento, sempre por escolha explícita do usuário.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 MUSIC / CULTURE -->
+    <section class="snap-zone bg-sun text-petrol py-20 md:py-28 overflow-hidden">
+      <div class="container-wide grid lg:grid-cols-[1.1fr_.9fr] gap-14 items-center">
+        <div class="reveal">
+          <div class="section-kicker text-petrol/55">Rota Musical</div>
+          <h2 class="display-tight text-5xl md:text-7xl lg:text-8xl font-black mt-4">Onde o asfalto encontra o acorde.</h2>
+          <p class="mt-7 max-w-2xl text-petrol/70 text-lg leading-relaxed">A música não aparece como decoração visual. Ela funciona como ritmo da navegação: pontos do percurso, pausas e acelerações constroem a sensação de que a cidade acompanha o corredor.</p>
+          <a href="#" class="text-link mt-8 text-sm font-bold">Conhecer a Rota Musical <i class="ph-bold ph-arrow-up-right"></i></a>
+        </div>
+        <div class="reveal reveal-delay-1 relative min-h-[430px] md:min-h-[520px] rounded-[32px] bg-petrol overflow-hidden p-7 md:p-9 flex flex-col justify-between soft-grid">
+          <div class="flex items-center justify-between"><span class="text-white/45 text-xs uppercase tracking-[.15em]">Uma prova em movimento</span><i class="ph-fill ph-waveform text-orange text-3xl"></i></div>
+          <div class="relative py-10">
+            <div class="h-1 rounded-full music-line"></div>
+            <div class="grid grid-cols-4 mt-[-16px]">
+              <div><span class="grid place-items-center w-8 h-8 rounded-full bg-sun border-4 border-petrol"></span><b class="block text-white mt-4 text-sm">Km 0</b><span class="text-white/45 text-xs">Largada</span></div>
+              <div class="text-center"><span class="mx-auto grid place-items-center w-8 h-8 rounded-full bg-orange border-4 border-petrol"><i class="ph-fill ph-music-note text-petrol text-xs"></i></span><b class="block text-white mt-4 text-sm">Cidade</b><span class="text-white/45 text-xs">Ritmo</span></div>
+              <div class="text-center"><span class="mx-auto grid place-items-center w-8 h-8 rounded-full bg-sky border-4 border-petrol"><i class="ph-fill ph-music-note text-petrol text-xs"></i></span><b class="block text-white mt-4 text-sm">Percurso</b><span class="text-white/45 text-xs">Cultura</span></div>
+              <div class="text-right"><span class="ml-auto grid place-items-center w-8 h-8 rounded-full bg-green border-4 border-petrol"></span><b class="block text-white mt-4 text-sm">Chegada</b><span class="text-white/45 text-xs">Celebração</span></div>
+            </div>
+          </div>
+          <p class="text-white/58 text-sm max-w-md">No site final, os pontos reais da programação entram aqui conforme a organização publicar artistas, horários e locais.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 STORIES -->
+    <section class="snap-zone bg-[#F5F1E8] text-petrol py-20 md:py-28">
+      <div class="container-wide">
+        <div class="reveal max-w-4xl"><div class="section-kicker text-orange">Pessoas, não campanha</div><h2 class="display-tight text-5xl md:text-7xl font-extrabold mt-4">Cada chegada começa muito antes da largada.</h2></div>
+        <div class="mt-14 grid lg:grid-cols-12 gap-4 md:gap-5">
+          <article class="reveal lg:col-span-5 rounded-[30px] overflow-hidden bg-petrol text-white min-h-[570px] relative">
+            <img src="assets/champion.jpg" alt="Atleta cruzando a linha de chegada" class="absolute inset-0 w-full h-full object-cover"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-petrol via-transparent to-transparent"></div>
+            <div class="absolute left-6 right-6 bottom-6"><div class="text-[10px] uppercase tracking-[.16em] text-sun">A chegada</div><blockquote class="font-display text-3xl md:text-4xl font-semibold leading-tight mt-2">“Foi minha primeira vez em Natal. No próximo ano estarei aqui novamente.”</blockquote><p class="text-white/55 text-xs mt-4">Pedrina · campeã 21K feminino</p></div>
+          </article>
+          <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4 md:gap-5">
+            <article class="reveal reveal-delay-1 rounded-[30px] overflow-hidden bg-white min-h-[275px] relative"><img src="assets/community-selfie.jpg" alt="Atletas celebrando juntos" class="absolute inset-0 w-full h-full object-cover"/><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div><div class="absolute left-5 right-5 bottom-5 text-white"><b class="font-display text-2xl">O Brasil se encontra aqui.</b><p class="text-xs text-white/70 mt-1">Atletas de vários estados, uma mesma linha de chegada.</p></div></article>
+            <article class="reveal reveal-delay-2 rounded-[30px] overflow-hidden bg-white min-h-[275px] relative"><img src="assets/community-runner.jpg" alt="Participante sorrindo no evento" class="absolute inset-0 w-full h-full object-cover"/><div class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></div><div class="absolute left-5 right-5 bottom-5 text-white"><b class="font-display text-2xl">A prova também é encontro.</b><p class="text-xs text-white/70 mt-1">A experiência não termina no cronômetro.</p></div></article>
+            <article class="reveal sm:col-span-2 rounded-[30px] bg-petrol text-white p-7 md:p-9 flex flex-col md:flex-row gap-8 md:items-end justify-between">
+              <div><span class="section-kicker text-sun">O próximo passo</span><h3 class="font-display text-4xl md:text-5xl font-extrabold mt-3">A conquista vira identidade.</h3></div><p class="text-white/55 max-w-sm text-sm leading-relaxed">No pós-prova, resultado, foto, evolução e próxima meta devem formar uma continuidade. A retenção nasce da memória da conquista, não de um banner de “inscrições abertas”.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 NUMBERS -->
+    <section class="snap-zone bg-petrol text-white py-20 md:py-28 overflow-hidden">
+      <div class="container-wide relative">
+        <div class="absolute right-0 top-0 w-72 h-72 bg-orange/15 blur-[100px] rounded-full"></div>
+        <div class="reveal grid lg:grid-cols-2 gap-12 items-end mb-14 relative z-10"><div><div class="section-kicker text-sun">Escala é argumento</div><h2 class="display-tight text-5xl md:text-7xl font-extrabold mt-4">O tamanho da experiência precisa ser percebido.</h2></div><p class="text-white/56 text-lg leading-relaxed max-w-xl lg:justify-self-end">Números entram como prova, não como decoração. Sempre acompanhados de contexto, período e significado.</p></div>
+        <div class="relative z-10 border-y border-white/12 grid md:grid-cols-3">
+          <div class="reveal py-10 md:py-14 md:pr-10 md:border-r border-white/12"><div class="metric font-display text-[clamp(4.8rem,9vw,8.2rem)] leading-none font-black text-sun" data-count="16000" data-suffix="mil">16 mil</div><p class="mt-4 text-white/55 max-w-xs">atletas inscritos na edição 2025.</p></div>
+          <div class="reveal reveal-delay-1 py-10 md:py-14 md:px-10 md:border-r border-white/12 border-t md:border-t-0"><div class="metric font-display text-[clamp(4.8rem,9vw,8.2rem)] leading-none font-black text-orange">60 mil</div><p class="mt-4 text-white/55 max-w-xs">passagens pela Arena durante os quatro dias de evento.</p></div>
+          <div class="reveal reveal-delay-2 py-10 md:py-14 md:pl-10 border-t md:border-t-0"><div class="font-display text-[clamp(3.8rem,7vw,6.2rem)] leading-none font-black">Brasil inteiro</div><p class="mt-4 text-white/55 max-w-xs">uma corrida com participação nacional e identidade potiguar.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 EXPO -->
+    <section id="expo" class="snap-zone bg-white text-petrol py-20 md:py-28">
+      <div class="container-wide">
+        <div class="grid lg:grid-cols-2 gap-5">
+          <div class="reveal rounded-[34px] overflow-hidden min-h-[560px] relative"><img src="assets/expo-crowd.jpg" alt="Público circulando pela Expo Meia do Sol" class="absolute inset-0 w-full h-full object-cover"/><div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div><div class="absolute left-7 right-7 bottom-7 text-white"><span class="section-kicker text-sun">Expo Meia do Sol</span><h2 class="font-display text-5xl md:text-6xl font-extrabold leading-[.92] mt-3">A corrida começa antes da largada.</h2></div></div>
+          <div class="reveal reveal-delay-1 rounded-[34px] bg-[#F1F1EE] p-7 md:p-10 flex flex-col justify-between min-h-[560px]">
+            <div><div class="section-kicker text-orange">Atleta + negócio</div><p class="mt-6 text-lg md:text-xl leading-relaxed text-black/66 max-w-xl">Para o atleta, kit, descoberta e conteúdo. Para marcas, contato qualificado, ativação e relacionamento. A home reconhece os dois públicos sem misturar as duas jornadas.</p></div>
+            <div class="grid sm:grid-cols-2 gap-4 mt-12">
+              <a href="#" class="cta rounded-[22px] bg-petrol text-white p-6 group"><i class="ph ph-ticket text-2xl text-sun"></i><b class="block font-display text-2xl mt-7">Vou à Expo</b><span class="text-sm text-white/50 block mt-2">Programação, mapa e expositores.</span><span class="text-link text-xs text-sun mt-5">Explorar <i class="ph ph-arrow-right"></i></span></a>
+              <a href="#" class="cta rounded-[22px] border border-black/10 bg-white p-6 group"><i class="ph ph-briefcase text-2xl text-orange"></i><b class="block font-display text-2xl mt-7">Quero expor</b><span class="text-sm text-black/50 block mt-2">Audiência, propriedades e contato comercial.</span><span class="text-link text-xs text-orange mt-5">Negócios <i class="ph ph-arrow-right"></i></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 KIDS -->
+    <section class="snap-zone screen-section bg-night text-white">
+      <div class="absolute inset-0"><img src="assets/kids.jpg" alt="Crianças correndo na Meia do Sol Kids" class="w-full h-full object-cover"/><div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,13,26,.92)_0%,rgba(6,13,26,.64)_46%,rgba(6,13,26,.08)_100%)] max-md:bg-[linear-gradient(180deg,rgba(6,13,26,.15)_0%,rgba(6,13,26,.78)_62%,#060D1A_100%)]"></div></div>
+      <div class="grain"></div>
+      <div class="relative z-10 container-wide py-20 md:py-24 w-full">
+        <div class="reveal max-w-2xl mt-auto md:translate-y-[10vh]"><div class="section-kicker text-sun">Meia do Sol Kids</div><h2 class="display-tight text-6xl md:text-8xl font-black mt-4">O futuro corre aqui.</h2><p class="text-white/66 text-lg mt-6 max-w-xl leading-relaxed">A experiência infantil não é um produto reduzido. É o primeiro capítulo de uma relação com esporte, cidade e família.</p><a href="#" class="cta inline-flex items-center gap-2 rounded-full bg-sun text-petrol px-6 py-4 font-bold text-sm mt-8">Conhecer Kids <i class="ph-bold ph-arrow-up-right"></i></a></div>
+      </div>
+    </section>
+
+    <!-- 11 PREPARE -->
+    <section id="prepare" class="snap-zone bg-[#F5F1E8] text-petrol py-20 md:py-28">
+      <div class="container-wide">
+        <div class="reveal grid lg:grid-cols-2 gap-12 items-end mb-12"><div><div class="section-kicker text-orange">Depois da inspiração, serviço</div><h2 class="display-tight text-5xl md:text-7xl font-extrabold mt-4">Tudo para chegar pronto.</h2></div><p class="text-black/58 max-w-xl text-lg leading-relaxed lg:justify-self-end">Quando o evento se aproxima, a interface muda de função: menos convencimento, mais orientação. O atleta recebe o que precisa no momento em que precisa.</p></div>
+        <div class="reveal grid sm:grid-cols-2 lg:grid-cols-3 border border-black/10 rounded-[30px] overflow-hidden bg-black/10 gap-px">
+          <a href="#" class="bg-white p-7 md:p-8 hover:bg-sun transition-colors duration-400"><i class="ph ph-book-open-text text-2xl"></i><b class="block font-display text-2xl mt-8">Guia do atleta</b><p class="text-sm text-black/50 mt-2">O que fazer, levar e observar.</p></a>
+          <a href="#" class="bg-white p-7 md:p-8 hover:bg-sun transition-colors duration-400"><i class="ph ph-path text-2xl"></i><b class="block font-display text-2xl mt-8">Percursos</b><p class="text-sm text-black/50 mt-2">Mapa, altimetria e pontos de apoio.</p></a>
+          <a href="#" class="bg-white p-7 md:p-8 hover:bg-sun transition-colors duration-400"><i class="ph ph-calendar-dots text-2xl"></i><b class="block font-display text-2xl mt-8">Programação</b><p class="text-sm text-black/50 mt-2">Horários da Expo à largada.</p></a>
+          <a href="#" class="bg-white p-7 md:p-8 hover:bg-sun transition-colors duration-400"><i class="ph ph-t-shirt text-2xl"></i><b class="block font-display text-2xl mt-8">Retirada do kit</b><p class="text-sm text-black/50 mt-2">Quando, onde e o que apresentar.</p></a>
+          <a href="#" class="bg-white p-7 md:p-8 hover:bg-sun transition-colors duration-400"><i class="ph ph-airplane-tilt text-2xl"></i><b class="block font-display text-2xl mt-8">Planeje Natal</b><p class="text-sm text-black/50 mt-2">Hospedagem, deslocamento e cidade.</p></a>
+          <a href="#" class="bg-white p-7 md:p-8 hover:bg-sun transition-colors duration-400"><i class="ph ph-question text-2xl"></i><b class="block font-display text-2xl mt-8">Dúvidas frequentes</b><p class="text-sm text-black/50 mt-2">Respostas rápidas, sem ruído.</p></a>
+        </div>
+
+        <div id="minha-meia" class="mt-10 md:mt-14 grid lg:grid-cols-[.82fr_1.18fr] gap-5 items-stretch">
+          <div class="reveal companion-panel rounded-[30px] text-white p-7 md:p-9">
+            <div class="flex items-center justify-between gap-5"><div><span class="section-kicker text-sun">Minha Meia</span><h3 class="font-display text-4xl md:text-5xl font-extrabold mt-3">No momento certo.</h3></div><div class="w-12 h-12 rounded-full border border-white/15 grid place-items-center"><i class="ph ph-sun text-sun text-2xl"></i></div></div>
+            <div class="mt-10 rounded-[22px] border border-white/12 bg-white/[.035] p-5">
+              <span id="companionPhase" class="text-[10px] uppercase tracking-[.16em] text-sun">Reta final</span>
+              <div id="companionHeadline" class="font-display text-3xl font-extrabold mt-2">Faltam poucos dias.</div>
+              <p id="companionText" class="text-sm text-white/52 mt-2">Sua prioridade agora é chegar com informação e tranquilidade.</p>
+            </div>
+            <div class="mt-8 space-y-6">
+              <div class="journey-step is-done"><b class="text-sm">Inscrição</b><span class="block text-xs text-white/42 mt-1">Vaga garantida</span></div>
+              <div class="journey-step is-done"><b class="text-sm">Preparação</b><span class="block text-xs text-white/42 mt-1">Percurso e guia disponíveis</span></div>
+              <div class="journey-step"><b class="text-sm">Arena</b><span class="block text-xs text-white/42 mt-1">Kit, acesso e largada</span></div>
+              <div class="journey-step"><b class="text-sm">Conquista</b><span class="block text-xs text-white/42 mt-1">Resultado, fotos e próximo objetivo</span></div>
+            </div>
+          </div>
+          <div class="reveal reveal-delay-1 rounded-[30px] border border-black/10 bg-white p-7 md:p-9 flex flex-col justify-between">
+            <div><span class="section-kicker text-orange">A home se adapta</span><h3 class="display-tight text-4xl md:text-6xl font-extrabold mt-3">A mesma marca. Outra prioridade.</h3><p class="text-black/56 text-base md:text-lg leading-relaxed mt-5 max-w-2xl">Meses antes, inspirar. Na reta final, preparar. No dia, orientar. Depois da prova, reconhecer a conquista. O calendário deixa de trocar banners e passa a reorganizar a experiência.</p></div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-10">
+              <div class="rounded-2xl bg-[#F5F1E8] p-4"><i class="ph ph-sparkle text-orange"></i><b class="block text-xs mt-5">Inspirar</b></div>
+              <div class="rounded-2xl bg-[#F5F1E8] p-4"><i class="ph ph-sneaker-move text-orange"></i><b class="block text-xs mt-5">Preparar</b></div>
+              <div class="rounded-2xl bg-petrol text-white p-4"><i class="ph ph-navigation-arrow text-sun"></i><b class="block text-xs mt-5">Orientar</b></div>
+              <div class="rounded-2xl bg-sun p-4"><i class="ph ph-medal text-petrol"></i><b class="block text-xs mt-5">Reconhecer</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15 LEGACY / POST-RACE -->
+    <section id="legado" class="snap-zone bg-petrol text-white py-20 md:py-28 overflow-hidden">
+      <div class="container-wide">
+        <div class="grid lg:grid-cols-[.78fr_1.22fr] gap-12 items-end mb-12">
+          <div class="reveal"><div class="section-kicker text-sun">Depois da chegada</div><h2 class="display-tight text-5xl md:text-7xl font-extrabold mt-4">Seu resultado não é o fim. É evidência.</h2></div>
+          <p class="reveal reveal-delay-1 text-white/58 text-lg leading-relaxed max-w-xl lg:justify-self-end">Tempo, pace, posição e fotos devem devolver significado à conquista. A experiência fecha o ciclo mostrando evolução e transformando a próxima prova em continuação natural.</p>
+        </div>
+        <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-5">
+          <div class="legacy-card reveal rounded-[32px] border border-white/12 bg-night p-7 md:p-10 relative overflow-hidden">
+            <div class="absolute right-[-12%] top-[-30%] w-[420px] aspect-square rounded-full bg-sun/10 blur-[80px]"></div>
+            <div class="relative z-10 flex items-center justify-between gap-5"><div><span class="text-[10px] uppercase tracking-[.16em] text-white/38">Sua Meia · 21K</span><h3 class="font-display text-3xl md:text-4xl font-extrabold mt-2">Você chegou.</h3></div><i class="ph-fill ph-medal text-sun text-4xl"></i></div>
+            <div class="relative z-10 grid sm:grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/10">
+              <div><span class="text-[10px] uppercase tracking-[.14em] text-white/36">Tempo líquido</span><div class="result-number text-4xl md:text-5xl font-extrabold mt-2">1:52:31</div></div>
+              <div><span class="text-[10px] uppercase tracking-[.14em] text-white/36">Pace médio</span><div class="result-number text-4xl md:text-5xl font-extrabold mt-2">5:20</div><span class="text-xs text-white/38">/km</span></div>
+              <div><span class="text-[10px] uppercase tracking-[.14em] text-white/36">Evolução</span><div class="result-number text-4xl md:text-5xl font-extrabold text-green mt-2">−4:18</div><span class="text-xs text-white/38">vs. última Meia</span></div>
+            </div>
+            <div class="relative z-10 mt-10 flex flex-wrap gap-3"><button class="cta rounded-full bg-sun text-petrol px-5 py-3 text-xs font-bold">Guardar conquista</button><button class="cta rounded-full border border-white/16 px-5 py-3 text-xs font-semibold">Compartilhar</button></div>
+          </div>
+          <div class="legacy-card reveal reveal-delay-1 rounded-[32px] border border-white/12 bg-white/[.035] p-7 md:p-10 flex flex-col justify-between min-h-[420px]">
+            <div><span class="section-kicker text-orange">Próximo capítulo</span><div class="font-display text-[clamp(5rem,12vw,9rem)] font-black leading-[.7] tracking-[-.07em] mt-8">31K</div><h3 class="font-display text-3xl font-extrabold mt-6">Você já fez a Meia. Até onde quer ir agora?</h3></div>
+            <a href="#provas" class="quiet-link text-sun text-sm font-bold self-start mt-8">Descobrir o próximo desafio <i class="ph ph-arrow-up-right ml-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16 FINAL -->
+    <section id="final" class="snap-zone relative bg-petrol text-white py-24 md:py-32 overflow-hidden">
+      <div class="absolute right-[-10%] top-[-30%] w-[680px] h-[680px] rounded-full bg-orange/20 blur-[120px]"></div>
+      <div class="absolute left-[-12%] bottom-[-50%] w-[640px] h-[640px] rounded-full bg-sky/15 blur-[110px]"></div>
+      <div class="grain"></div>
+      <div class="relative z-10 container-copy text-center">
+        <div class="reveal section-kicker text-sun">A jornada continua</div>
+        <h2 class="reveal reveal-delay-1 display-tight text-6xl md:text-8xl lg:text-9xl font-black mt-5">A próxima versão de você começa aqui.</h2>
+        <p class="reveal reveal-delay-2 text-white/62 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed mt-8">A prova começa como possibilidade, vira compromisso e termina como parte da sua história. Depois disso, o horizonte muda.</p>
+        <div class="reveal reveal-delay-3 mt-10 flex flex-col sm:flex-row justify-center gap-3"><a href="#provas" class="cta inline-flex justify-center items-center gap-2 rounded-full bg-sun text-petrol px-7 py-4 font-bold">Escolher minha prova <i class="ph-bold ph-arrow-up-right"></i></a><a href="#" class="cta inline-flex justify-center items-center gap-2 rounded-full border border-white/20 px-7 py-4 font-semibold">Já estou inscrito <i class="ph ph-user-circle"></i></a></div>
+      </div>
+      <div class="container-wide mt-20 md:mt-28 pt-8 border-t border-white/12 grid md:grid-cols-[1fr_auto] gap-8 items-end">
+        <div><div class="flex items-center gap-3"><img src="assets/logo-mark.png" alt="" class="w-11 h-11 object-contain"/><div class="font-display uppercase leading-none"><b class="block text-sm">Meia Maratona do Sol</b><span class="text-[10px] text-white/40 tracking-[.16em]">Natal · RN</span></div></div><p class="text-xs text-white/38 mt-5 max-w-md">Meia do Sol Digital Experience — uma experiência contínua, da inspiração à próxima linha de chegada.</p></div>
+        <div class="flex flex-wrap gap-5 text-xs text-white/55"><a class="nav-link" href="#">Instagram</a><a class="nav-link" href="#">YouTube</a><a class="nav-link" href="#">Negócios</a><a class="nav-link" href="#">Contato</a></div>
+      </div>
+    </section>
+  </main>
+
+  <a href="#provas" id="mobileSticky" class="md:hidden fixed z-40 bottom-[max(12px,env(safe-area-inset-bottom))] left-3 right-3 bg-sun text-petrol rounded-full py-4 px-5 flex items-center justify-between font-bold text-sm shadow-[0_16px_50px_rgba(0,0,0,.35)] transition-all duration-400">Escolher minha prova <i class="ph-bold ph-arrow-up-right"></i></a>
+
+  <script>
+    const header=document.getElementById('siteHeader');
+    const progress=document.getElementById('scrollProgress');
+    const heroImg=document.getElementById('heroImg');
+    const sticky=document.getElementById('mobileSticky');
+    const final=document.getElementById('final');
+
+    function onScroll(){
+      const y=window.scrollY;
+      header.classList.toggle('glass',y>24);
+      header.classList.toggle('border-b',y>24);
+      header.classList.toggle('border-white/10',y>24);
+      const max=document.documentElement.scrollHeight-innerHeight;
+      progress.style.width=(max>0?(y/max)*100:0)+'%';
+      if(heroImg && !matchMedia('(prefers-reduced-motion: reduce)').matches){ heroImg.style.transform=`scale(1.04) translateY(${Math.min(y*.035,24)}px)`; }
+      if(sticky && final){ const r=final.getBoundingClientRect(); sticky.style.transform=r.top<innerHeight*.9?'translateY(120%)':'translateY(0)'; }
+    }
+    addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+    const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('is-visible')}),{threshold:.14,rootMargin:'0px 0px -5% 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    document.querySelectorAll('.race-card').forEach(card=>card.addEventListener('click',()=>{
+      document.querySelectorAll('.race-card').forEach(c=>c.classList.remove('is-selected'));
+      card.classList.add('is-selected');
+      document.getElementById('raceName').textContent=card.dataset.race;
+      document.getElementById('raceSub').textContent=card.dataset.sub;
+      document.getElementById('raceDate').textContent=card.dataset.date;
+    }));
+
+    const hotspotData={
+      largada:['01 · Largada','O primeiro passo já acontece em grande escala.','A largada dentro do complexo da Arena cria orientação, segurança operacional e uma percepção de evento que começa antes do cronômetro.'],
+      chegada:['02 · Chegada','A conquista ganha um palco à altura.','Arquibancada, estrutura e fluxo convergem para transformar a chegada em memória — não apenas em encerramento operacional.'],
+      expo:['03 · Expo','O evento começa antes do dia da prova.','A Arena também recebe a Expo e a retirada de kits, fazendo o atleta entrar no universo da Meia antes da largada.']
+    };
+    document.querySelectorAll('.hotspot').forEach(btn=>btn.addEventListener('click',()=>{
+      document.querySelectorAll('.hotspot').forEach(b=>b.classList.remove('is-active'));btn.classList.add('is-active');
+      const d=hotspotData[btn.dataset.hotspot];
+      document.getElementById('hotspotIndex').textContent=d[0];document.getElementById('hotspotTitle').textContent=d[1];document.getElementById('hotspotText').textContent=d[2];
+    }));
+
+
+    // Contextual experience — the homepage changes priority according to event time
+    const eventStart=new Date('2026-09-19T05:00:00-03:00');
+    const eventEnd=new Date('2026-09-20T23:59:00-03:00');
+    const now=new Date();
+    const day=86400000;
+    const daysTo=Math.ceil((eventStart-now)/day);
+    const phaseText=document.getElementById('phaseHeroText');
+    const eventCountdown=document.getElementById('eventCountdown');
+    const heroPrimaryText=document.getElementById('heroPrimaryText');
+    const heroPrimaryCta=document.getElementById('heroPrimaryCta');
+    const companionPhase=document.getElementById('companionPhase');
+    const companionHeadline=document.getElementById('companionHeadline');
+    const companionText=document.getElementById('companionText');
+    let phase='inspire';
+    if(now>eventEnd) phase='after';
+    else if(now>=eventStart) phase='live';
+    else if(daysTo<=7) phase='week';
+    else if(daysTo<=30) phase='final';
+    else if(daysTo<=120) phase='prepare';
+    const phaseCopy={
+      inspire:['O próximo desafio está no horizonte',daysTo>0?`Faltam ${daysTo} dias`:'Sua jornada começou','Escolha sua prova','#provas','Inspiração','Seu próximo objetivo começa a ganhar forma.','Escolha uma distância e transforme intenção em compromisso.'],
+      prepare:['Sua jornada já começou',`Faltam ${daysTo} dias`,'Preparar minha Meia','#prepare','Preparação',`Faltam ${daysTo} dias.`,'Treino, percurso, viagem e logística passam a ocupar o centro da experiência.'],
+      final:['A reta final começou',`Faltam ${daysTo} dias`,'Preparar minha Meia','#prepare','Reta final',`Faltam ${daysTo} dias.`,'Agora o site reduz o ruído e coloca guia, percurso, kit e logística na frente.'],
+      week:['Natal está esperando você',`Faltam ${daysTo} dias`,'Ver meu guia','#prepare','Semana da prova',`Faltam ${daysTo} dias.`,'Tudo que você precisa para chegar à Arena com confiança.'],
+      live:['Hoje é dia de Meia do Sol','O evento está acontecendo','Minha largada','#prepare','É hoje','Hoje é dia de Meia do Sol.','Horários, acesso, mapa e informações críticas assumem prioridade.'],
+      after:['Você chegou','A edição 2026 virou história','Ver meu resultado','#legado','Conquista','Você conseguiu.','Resultado, fotos, certificado, memória e próximo desafio entram no centro da experiência.']
+    };
+    const pc=phaseCopy[phase];
+    if(phaseText)phaseText.textContent=pc[0]; if(eventCountdown)eventCountdown.textContent=pc[1]; if(heroPrimaryText)heroPrimaryText.textContent=pc[2]; if(heroPrimaryCta)heroPrimaryCta.href=pc[3]; if(companionPhase)companionPhase.textContent=pc[4]; if(companionHeadline)companionHeadline.textContent=pc[5]; if(companionText)companionText.textContent=pc[6];
+    if(sticky){sticky.firstChild.nodeValue=(phase==='after'?'Ver meu resultado ':phase==='live'?'Minha largada ':phase==='week'||phase==='final'?'Preparar minha Meia ':'Escolher minha prova '); sticky.href=phase==='after'?'#legado':(phase==='live'||phase==='week'||phase==='final')?'#prepare':'#provas';}
+
+    // Manifesto — three mental states, driven by normal scroll (no scroll hijacking)
+    const manifesto=document.getElementById('manifesto');
+    const manifestoSteps=[...document.querySelectorAll('.manifesto-step')];
+    function updateManifesto(){
+      if(!manifesto||!manifestoSteps.length)return;
+      const r=manifesto.getBoundingClientRect();
+      const travel=Math.max(1,manifesto.offsetHeight-innerHeight);
+      const p=Math.min(1,Math.max(0,-r.top/travel));
+      const idx=p<.34?0:p<.69?1:2;
+      manifestoSteps.forEach((el,i)=>el.classList.toggle('is-active',i===idx));
+    }
+    addEventListener('scroll',updateManifesto,{passive:true});updateManifesto();
+
+    // City as interface
+    const routeData={
+      arena:['O começo','A Arena transforma espera em ritual.','Antes de correr pela cidade, o atleta sente a escala do evento, encontra sua onda e entende que já entrou na experiência.'],
+      cidade:['A cidade abre','Natal deixa de ser fundo e vira parte da narrativa.','A interface apresenta a cidade em progressão, conectando orientação, identidade e antecipação do que o atleta verá durante a prova.'],
+      costeira:['O horizonte acompanha','O percurso ganha memória antes mesmo de ser percorrido.','A Via Costeira entra como experiência visual e territorial: não apenas um trecho no mapa, mas um momento reconhecível da jornada.'],
+      retorno:['A conquista','A Arena reaparece com outro significado.','O mesmo lugar que recebeu ansiedade e expectativa agora recebe memória, resultado e a pergunta que fecha o ciclo: qual é o próximo?']
+    };
+    document.querySelectorAll('.route-stop').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.route-stop').forEach(b=>b.classList.remove('is-active'));btn.classList.add('is-active');const d=routeData[btn.dataset.route];document.getElementById('routeEyebrow').textContent=d[0];document.getElementById('routeTitle').textContent=d[1];document.getElementById('routeText').textContent=d[2];}));
+    const routeShell=document.getElementById('routeShell'); if(routeShell)io.observe(routeShell);
+
+    // The start moment — deliberate opt-in, no autoplay
+    const launchScene=document.getElementById('momento'),launchBtn=document.getElementById('launchBtn'),launchCount=document.getElementById('launchCount'),launchMessage=document.getElementById('launchMessage'),launchFlash=document.getElementById('launchFlash');
+    let launchBusy=false;
+    if(launchBtn)launchBtn.addEventListener('click',async()=>{
+      if(launchBusy)return; launchBusy=true; launchScene.classList.add('is-running'); launchBtn.setAttribute('disabled','');
+      const seq=[['3','Respira.'],['2','Encontra seu ritmo.'],['1','Tudo o que veio antes cabe neste segundo.'],['VAI','Agora é com você.']];
+      for(const [n,msg] of seq){launchCount.textContent=n;launchMessage.textContent=msg;await new Promise(r=>setTimeout(r,n==='VAI'?900:850));}
+      launchFlash.classList.add('go'); setTimeout(()=>launchFlash.classList.remove('go'),780);
+      await new Promise(r=>setTimeout(r,700)); launchCount.textContent='21K';launchMessage.textContent='A corrida começa. A experiência continua.';launchScene.classList.remove('is-running');launchBtn.removeAttribute('disabled');launchBtn.querySelector('span').textContent='Viver novamente';launchBusy=false;
+    });
+
+    const menuBtn=document.getElementById('menuBtn'), mobileMenu=document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click',()=>{const open=!mobileMenu.classList.contains('hidden');mobileMenu.classList.toggle('hidden');menuBtn.setAttribute('aria-expanded',String(!open));menuBtn.innerHTML=open?'<i class="ph ph-list text-xl"></i>':'<i class="ph ph-x text-xl"></i>';});
+    mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileMenu.classList.add('hidden');menuBtn.setAttribute('aria-expanded','false');menuBtn.innerHTML='<i class="ph ph-list text-xl"></i>';}));
+  </script>
+</body>
+</html>

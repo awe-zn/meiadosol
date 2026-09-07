@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#060D1A" />
+  <title>Meia Maratona do Sol Sicredi 2026 — Natal/RN</title>
+  <meta name="description"
+    content="Meia Maratona do Sol Sicredi 2026. Informações sobre provas, percursos, programação, Expo, preparação e experiência do atleta em Natal/RN." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Mono', 'monospace']
+          },
+          colors: {
+            petrol: '#060D1A',
+            night: '#0B1C33',
+            night2: '#0F2440',
+            night3: '#14304F',
+            sun: '#FFBE00',
+            orange: '#FF6600',
+            sky: '#4FADDB',
+            green: '#41AB34',
+            sand: '#FFE6B2',
+            paper: '#FAFAFA'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --petrol: #060D1A;
+      --night: #0B1C33;
+      --night2: #0F2440;
+      --night3: #14304F;
+      --sun: #FFBE00;
+      --orange: #FF6600;
+      --sky: #4FADDB;
+      --green: #41AB34;
+      --sand: #FFE6B2;
+      --paper: #FAFAFA;
+      --ink: #10141B;
+      --nav-h: 82px;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --display: 'Outfit', sans-serif;
+      --text: 'Plus Jakarta Sans', sans-serif;
+      --mono: 'Space Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--petrol);
+      scroll-padding-top: calc(var(--nav-h) + 18px);
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--text);
+      font-size: 18px;
+      line-height: 1.65;
+      background: var(--petrol);
+      color: #fff;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a,
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    ::selection {
+      background: var(--sun);
+      color: var(--petrol);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--sun);
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(100% - 64px, 1360px);
+      margin-inline: auto;
+    }
+
+    .measure {
+      max-width: 64ch;
+    }
+
+    .copy {
+      font-size: clamp(18px, 1.35vw, 20px);
+      line-height: 1.75;
+    }
+
+    .copy-lg {
+      font-size: clamp(20px, 1.7vw, 24px);
+      line-height: 1.65;
+    }
+
+    .display {
+      font-family: var(--display);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .005em;
+      line-height: .94;
+    }
+
+    .ui-title {
+      font-family: var(--text);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .data {
+      font-family: var(--text);
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -.03em;
+    }
+
+    .mono {
+      font-family: var(--mono);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .eyebrow {
+      font-family: var(--text);
+      font-size: 14px;
+      line-height: 1.3;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+    }
+
+    .section-pad {
+      padding-block: clamp(88px, 10vw, 152px);
+    }
+
+    .scene {
+      min-height: calc(100svh - var(--nav-h));
+      display: flex;
+      align-items: center;
+      scroll-margin-top: var(--nav-h);
+    }
+
+    .line {
+      height: 1px;
+      background: currentColor;
+      opacity: .16;
+    }
+
+    .nav-link,
+    .text-link {
+      position: relative;
+      text-decoration: none;
+    }
+
+    .nav-link::after,
+    .text-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -6px;
+      height: 1px;
+      background: currentColor;
+      transition: right 400ms var(--ease);
+    }
+
+    .nav-link:hover::after,
+    .nav-link:focus-visible::after,
+    .text-link:hover::after,
+    .text-link:focus-visible::after {
+      right: 0;
+    }
+
+    .button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .7rem;
+      padding: .85rem 1.25rem;
+      border-radius: 999px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1;
+      text-decoration: none;
+      transition: transform 400ms var(--ease), background-color 400ms var(--ease), color 400ms var(--ease), border-color 400ms var(--ease);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--sun);
+      color: var(--petrol);
+      border: 1px solid var(--sun);
+    }
+
+    .button-primary:hover {
+      background: #FFD04A;
+      border-color: #FFD04A;
+    }
+
+    .button-dark {
+      background: var(--petrol);
+      color: #fff;
+      border: 1px solid var(--petrol);
+    }
+
+    .button-outline-light {
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, .34);
+      background: transparent;
+    }
+
+    .button-outline-light:hover {
+      border-color: #fff;
+    }
+
+    .button-outline-dark {
+      color: var(--petrol);
+      border: 1px solid rgba(6, 13, 26, .34);
+      background: transparent;
+    }
+
+    .button-outline-dark:hover {
+      border-color: var(--petrol);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 760ms var(--ease), transform 760ms var(--ease);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    #siteHeader {
+      transition: background-color 400ms var(--ease), border-color 400ms var(--ease);
+    }
+
+    #siteHeader.is-solid {
+      background: rgba(6, 13, 26, .96);
+      border-color: rgba(255, 255, 255, .12);
+    }
+
+    .hero-photo {
+      filter: saturate(.92) brightness(.64);
+    }
+
+    .hero-photo-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(6, 13, 26, .28);
+      pointer-events: none;
+    }
+
+    .sun-disc {
+      width: min(52vw, 720px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--sun);
+      position: absolute;
+      right: -7vw;
+      bottom: -40%;
+      will-change: transform;
+      transition: transform 80ms linear;
+    }
+
+    .sun-ring {
+      width: min(60vw, 840px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 190, 0, .2);
+      position: absolute;
+      right: -11vw;
+      bottom: -48%;
+    }
+
+    .race-card {
+      border: 1px solid rgba(6, 13, 26, .12);
+      background: #fff;
+      transition: transform 400ms var(--ease), border-color 400ms var(--ease), background-color 400ms var(--ease);
+    }
+
+    .race-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(6, 13, 26, .5);
+    }
+
+    .race-card.signature {
+      background: var(--night);
+      color: #fff;
+      border-color: var(--night);
+    }
+
+    .race-card.signature:hover {
+      border-color: var(--sun);
+    }
+
+    .route-button {
+      width: 100%;
+      text-align: left;
+      border: 1px solid rgba(6, 13, 26, .18);
+      background: transparent;
+      padding: 18px 20px;
+      border-radius: 16px;
+      transition: background-color 400ms var(--ease), border-color 400ms var(--ease), transform 400ms var(--ease);
+    }
+
+    .route-button:hover,
+    .route-button.is-active {
+      background: var(--paper);
+      border-color: var(--paper);
+      transform: translateX(4px);
+    }
+
+    .route-path {
+      stroke-dasharray: 1200;
+      stroke-dashoffset: 1200;
+      transition: stroke-dashoffset 1500ms var(--ease);
+    }
+
+    .route-visual.is-visible .route-path {
+      stroke-dashoffset: 0;
+    }
+
+    .photo-tile {
+      position: relative;
+      overflow: hidden;
+      background: var(--night);
+    }
+
+    .photo-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 700ms var(--ease);
+    }
+
+    .photo-tile:hover img {
+      transform: scale(1.035);
+    }
+
+    .photo-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 22px 24px;
+      background: rgba(6, 13, 26, .88);
+      color: #fff;
+      transform: translateY(100%);
+      transition: transform 400ms var(--ease);
+    }
+
+    .photo-tile:hover .photo-caption,
+    .photo-tile:focus-within .photo-caption {
+      transform: none;
+    }
+
+    .service-card {
+      border-top: 1px solid rgba(6, 13, 26, .16);
+      padding: 28px 0;
+      transition: padding-left 400ms var(--ease);
+    }
+
+    .service-card:hover {
+      padding-left: 10px;
+    }
+
+    .partner-wordmark {
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid rgba(6, 13, 26, .10);
+      font-size: 18px;
+      font-weight: 700;
+      color: rgba(6, 13, 26, .62);
+      background: #fff;
+      transition: color 400ms var(--ease), border-color 400ms var(--ease), transform 400ms var(--ease);
+    }
+
+    .partner-wordmark:hover {
+      color: var(--petrol);
+      border-color: rgba(6, 13, 26, .34);
+      transform: translateY(-2px);
+    }
+
+    .footer-link {
+      color: rgba(255, 255, 255, .68);
+      text-decoration: none;
+      transition: color 400ms var(--ease);
+    }
+
+    .footer-link:hover {
+      color: #fff;
+    }
+
+    .mobile-cta {
+      padding-bottom: max(12px, env(safe-area-inset-bottom));
+    }
+
+    @media (min-width:1024px) and (prefers-reduced-motion:no-preference) {
+      main {
+        scroll-snap-type: y proximity;
+      }
+
+      .scene {
+        scroll-snap-align: start;
+      }
+    }
+
+    @media (max-width:900px) {
+      :root {
+        --nav-h: 68px;
+      }
+
+      .wrap {
+        width: min(100% - 40px, 1360px);
+      }
+
+      .scene {
+        min-height: auto;
+      }
+
+      .sun-disc {
+        width: 78vw;
+        right: -22vw;
+        bottom: -20vw;
+      }
+
+      .sun-ring {
+        width: 90vw;
+        right: -28vw;
+        bottom: -27vw;
+      }
+    }
+
+    @media (max-width:560px) {
+      .wrap {
+        width: min(100% - 32px, 1360px);
+      }
+
+      .section-pad {
+        padding-block: 72px;
+      }
+
+      .copy {
+        line-height: 1.7;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .photo-caption {
+        transform: none;
+        padding: 16px 18px;
+        font-size: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition-duration: .001ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="siteHeader" class="fixed inset-x-0 top-0 z-50 border-b border-transparent">
+    <div class="wrap h-[82px] max-[900px]:h-[68px] flex items-center justify-between gap-6">
+      <a href="#inicio" class="flex items-center gap-3 shrink-0" aria-label="Meia Maratona do Sol — início">
+        <img src="assets/logo-mark.png" alt="" class="w-10 h-10 max-[560px]:w-9 max-[560px]:h-9 object-contain" />
+        <div class="leading-none hidden sm:block">
+          <span class="display text-[14px]">Meia Maratona</span>
+          <span class="block text-[12px] font-semibold tracking-[.12em] uppercase text-white/60 mt-1">do Sol ·
+            Sicredi</span>
+        </div>
+      </a>
+
+      <nav class="hidden xl:flex items-center gap-8 text-[18px] font-semibold" aria-label="Navegação principal">
+        <a class="nav-link" href="#provas">Provas</a>
+        <a class="nav-link" href="#percurso">Percurso</a>
+        <a class="nav-link" href="#prepare-se">Prepare-se</a>
+        <a class="nav-link" href="#experiencia">Expo & experiência</a>
+        <a class="nav-link" href="#resultados">Resultados</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a id="contextCta" href="#prepare-se" class="button button-primary max-[560px]:hidden">
+          <span id="contextCtaLabel">Guia do atleta</span>
+          <i class="ph ph-arrow-up-right"></i>
+        </a>
+        <button id="menuBtn" type="button"
+          class="xl:hidden w-11 h-11 rounded-full border border-white/25 grid place-items-center" aria-expanded="false"
+          aria-controls="mobileMenu" aria-label="Abrir menu">
+          <i class="ph ph-list text-2xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="hidden xl:hidden bg-petrol border-t border-white/10">
+      <nav class="wrap py-7 grid gap-5 text-[18px] font-semibold" aria-label="Navegação mobile">
+        <a href="#provas">Provas</a>
+        <a href="#percurso">Percurso</a>
+        <a href="#prepare-se">Prepare-se</a>
+        <a href="#experiencia">Expo & experiência</a>
+        <a href="#resultados">Resultados</a>
+        <div class="line text-white mt-2"></div>
+        <a href="#patrocinadores" class="text-white/65">Parceiros e patrocinadores</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 · ANTES DO AMANHECER -->
+    <section id="inicio" class="scene bg-petrol relative overflow-hidden pt-[var(--nav-h)]">
+      <div class="absolute inset-y-0 right-0 w-[48%] max-lg:w-full hero-photo-wrap">
+        <img src="assets/arena-wide.jpg" alt="Arena das Dunas preparada para a Meia Maratona do Sol"
+          class="hero-photo w-full h-full object-cover object-center" />
+      </div>
+      <div class="absolute inset-0 bg-petrol/55 lg:hidden"></div>
+
+      <div
+        class="wrap relative z-10 py-16 md:py-20 lg:py-24 min-h-[calc(100svh-var(--nav-h))] flex flex-col justify-between">
+        <div class="max-w-[790px]">
+          <div class="reveal flex items-center gap-4 mb-8">
+            <span class="eyebrow text-sun">19 e 20 de setembro · Natal/RN</span>
+            <span class="h-px w-12 bg-white/25 hidden sm:block"></span>
+          </div>
+          <h1 class="display text-[clamp(64px,8.3vw,146px)] max-w-[930px]">
+            O Brasil<br><span class="text-sun">corre aqui.</span>
+          </h1>
+          <p class="reveal copy-lg measure text-white/78 mt-8 md:mt-10">
+            A Meia Maratona do Sol reúne provas de 5K, 10K e 21,097K, além dos desafios de 26K e 31K. Largadas e
+            chegadas acontecem na Arena das Dunas, em Natal.
+          </p>
+          <div class="reveal mt-9 flex flex-wrap gap-3 max-w-[620px]">
+            <a href="#provas" class="button button-primary">Conhecer as provas <i class="ph ph-arrow-down"></i></a>
+            <a href="#prepare-se" class="button button-outline-light">Informações para atletas</a>
+          </div>
+        </div>
+
+        <div class="mt-16 pt-6 border-t border-white/15 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-[940px]">
+          <div><span class="eyebrow text-white/45">Local</span><strong class="block text-[18px] mt-2">Arena das
+              Dunas</strong></div>
+          <div><span class="eyebrow text-white/45">Provas</span><strong class="block text-[18px] mt-2">5K · 10K ·
+              21K</strong></div>
+          <div><span class="eyebrow text-white/45">Desafios</span><strong class="block text-[18px] mt-2">26K ·
+              31K</strong></div>
+          <div><span class="eyebrow text-white/45">Edição</span><strong class="block text-[18px] mt-2">2026</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · RAIAR DO SOL -->
+    <section class="scene bg-night relative overflow-hidden">
+      <div id="sunDisc" class="sun-disc" aria-hidden="true"></div>
+      <div class="sun-ring" aria-hidden="true"></div>
+      <div class="wrap relative z-10 py-24 md:py-32 grid lg:grid-cols-[1fr_.9fr] gap-16 items-center">
+        <div class="reveal max-w-[760px]">
+          <p class="eyebrow text-sun mb-5">Domingo · 20 de setembro</p>
+          <h2 class="display text-[clamp(52px,7vw,112px)]">A meia começa enquanto Natal ainda desperta.</h2>
+          <p class="copy measure text-white/74 mt-8">
+            A primeira largada dos 21,097K acontece às 4h50. As ondas gerais começam às 5h e seguem até 5h25. Enquanto
+            os atletas avançam, a cidade clareia e o percurso segue da Arena das Dunas em direção à Via Costeira, antes
+            do retorno ao estádio.
+          </p>
+          <a href="#percurso" class="text-link inline-flex mt-8 font-semibold text-[18px] text-sun">Ver percurso e
+            horários <i class="ph ph-arrow-right"></i></a>
+        </div>
+
+        <div class="reveal border-l border-white/15 pl-8 md:pl-12">
+          <div class="mono text-[clamp(58px,9vw,118px)] leading-none text-sun">04:50</div>
+          <div class="ui-title text-[24px] mt-5">Elite · 21,097K</div>
+          <div class="mt-8 grid gap-5">
+            <div class="flex items-baseline justify-between gap-4 border-t border-white/15 pt-5"><span
+                class="copy text-white/72">PCD</span><strong class="mono text-[20px]">04:55</strong></div>
+            <div class="flex items-baseline justify-between gap-4 border-t border-white/15 pt-5"><span
+                class="copy text-white/72">Geral · Onda 01</span><strong class="mono text-[20px]">05:00</strong></div>
+            <div class="flex items-baseline justify-between gap-4 border-t border-white/15 pt-5"><span
+                class="copy text-white/72">Geral · última onda</span><strong
+                class="mono text-[20px]">05:20–05:25</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · PROVAS / O DIA ABRE -->
+    <section id="provas" class="section-pad bg-sand text-petrol scroll-mt-24">
+      <div class="wrap">
+        <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-12 lg:gap-20 items-end mb-14">
+          <div class="reveal">
+            <p class="eyebrow text-orange mb-4">Provas 2026</p>
+            <h2 class="display text-[clamp(52px,6.4vw,96px)]">Uma distância para cada momento da jornada.</h2>
+          </div>
+          <p class="reveal copy text-petrol/70 max-w-[720px] lg:pb-2">
+            Consulte data, horário e formato de cada prova. Os detalhes completos de categorias, premiação,
+            elegibilidade e regras permanecem concentrados nas páginas de cada distância e no regulamento oficial.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-5">
+          <article class="race-card rounded-[24px] p-7 lg:col-span-4 reveal">
+            <div class="flex justify-between gap-6 items-start">
+              <div>
+                <p class="eyebrow text-orange">Sábado · 19 set</p>
+                <div class="data text-[64px] leading-none mt-5">5K</div>
+              </div>
+              <i class="ph ph-person-simple-run text-[34px] text-orange"></i>
+            </div>
+            <p class="copy text-petrol/65 mt-7">Largadas a partir de 15h30, com saída e chegada na Arena das Dunas.</p>
+            <a href="#" class="text-link inline-flex mt-7 font-semibold text-[18px]">Ver prova 5K <i
+                class="ph ph-arrow-right"></i></a>
+          </article>
+
+          <article class="race-card rounded-[24px] p-7 lg:col-span-4 reveal">
+            <div class="flex justify-between gap-6 items-start">
+              <div>
+                <p class="eyebrow text-orange">Sábado · 19 set</p>
+                <div class="data text-[64px] leading-none mt-5">10K</div>
+              </div>
+              <i class="ph ph-person-simple-run text-[34px] text-orange"></i>
+            </div>
+            <p class="copy text-petrol/65 mt-7">Largadas a partir de 17h. O percurso passa pela UFRN e pelo entorno do
+              Parque das Dunas.</p>
+            <a href="#" class="text-link inline-flex mt-7 font-semibold text-[18px]">Ver prova 10K <i
+                class="ph ph-arrow-right"></i></a>
+          </article>
+
+          <article class="race-card signature rounded-[24px] p-7 lg:col-span-4 reveal">
+            <div class="flex justify-between gap-6 items-start">
+              <div>
+                <p class="eyebrow text-sun">Domingo · 20 set</p>
+                <div class="data text-[64px] leading-none mt-5 text-sun">21K</div>
+              </div>
+              <i class="ph-duotone ph-medal text-[38px] text-sun"
+                style="--ph-duotone-secondary-color:#FF6600;--ph-duotone-secondary-opacity:1"></i>
+            </div>
+            <p class="copy text-white/72 mt-7">A prova principal larga antes do amanhecer e retorna à Arena das Dunas
+              após o trecho pela Via Costeira.</p>
+            <a href="#percurso" class="text-link inline-flex mt-7 font-semibold text-[18px] text-sun">Ver prova 21K <i
+                class="ph ph-arrow-right"></i></a>
+          </article>
+
+          <article class="race-card rounded-[24px] p-7 lg:col-span-6 reveal">
+            <div class="flex justify-between gap-6 items-start">
+              <div>
+                <p class="eyebrow text-orange">Dois dias de prova</p>
+                <div class="data text-[56px] leading-none mt-5">26K</div>
+              </div>
+              <span class="mono text-[16px] font-bold border border-petrol/20 rounded-full px-3 py-2">5K + 21K</span>
+            </div>
+            <p class="copy text-petrol/65 mt-7">Desafio que combina a prova de 5K no sábado com a meia maratona no
+              domingo.</p>
+            <a href="#" class="text-link inline-flex mt-7 font-semibold text-[18px]">Ver desafio 26K <i
+                class="ph ph-arrow-right"></i></a>
+          </article>
+
+          <article class="race-card rounded-[24px] p-7 lg:col-span-6 reveal">
+            <div class="flex justify-between gap-6 items-start">
+              <div>
+                <p class="eyebrow text-orange">Dois dias de prova</p>
+                <div class="data text-[56px] leading-none mt-5">31K</div>
+              </div>
+              <span class="mono text-[16px] font-bold border border-petrol/20 rounded-full px-3 py-2">10K + 21K</span>
+            </div>
+            <p class="copy text-petrol/65 mt-7">Desafio que combina os 10K do sábado com os 21,097K do domingo.</p>
+            <a href="#" class="text-link inline-flex mt-7 font-semibold text-[18px]">Ver desafio 31K <i
+                class="ph ph-arrow-right"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · PERCURSO / CÉU ABERTO -->
+    <section id="percurso" class="scene bg-sky text-petrol relative overflow-hidden scroll-mt-24">
+      <div class="wrap py-24 md:py-32 grid lg:grid-cols-[.95fr_1.05fr] gap-14 lg:gap-20 items-center">
+        <div class="route-visual reveal" id="routeVisual">
+          <svg viewBox="0 0 760 640" role="img"
+            aria-label="Leitura narrativa do percurso de 21K, da Arena das Dunas à Via Costeira e retorno">
+            <path
+              d="M118 498 C160 390 280 444 292 338 C304 232 398 270 431 188 C470 91 605 111 629 206 C650 289 560 325 517 359 C460 404 473 515 350 528 C252 538 207 504 118 498Z"
+              fill="none" stroke="#0B1C33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"
+              class="route-path" />
+            <circle cx="118" cy="498" r="18" fill="#FFBE00" stroke="#0B1C33" stroke-width="7" />
+            <circle cx="292" cy="338" r="14" fill="#FF6600" stroke="#0B1C33" stroke-width="7" />
+            <circle cx="431" cy="188" r="14" fill="#FFBE00" stroke="#0B1C33" stroke-width="7" />
+            <circle cx="629" cy="206" r="14" fill="#41AB34" stroke="#0B1C33" stroke-width="7" />
+            <circle cx="350" cy="528" r="14" fill="#FF6600" stroke="#0B1C33" stroke-width="7" />
+            <text x="76" y="555" font-family="Plus Jakarta Sans" font-size="18" font-weight="700"
+              fill="#0B1C33">Arena</text>
+            <text x="250" y="315" font-family="Plus Jakarta Sans" font-size="18" font-weight="700"
+              fill="#0B1C33">BR-101</text>
+            <text x="394" y="155" font-family="Plus Jakarta Sans" font-size="18" font-weight="700" fill="#0B1C33">Ponta
+              Negra</text>
+            <text x="584" y="172" font-family="Plus Jakarta Sans" font-size="18" font-weight="700" fill="#0B1C33">Via
+              Costeira</text>
+            <text x="316" y="578" font-family="Plus Jakarta Sans" font-size="18" font-weight="700"
+              fill="#0B1C33">Retorno</text>
+          </svg>
+          <p class="text-[15px] leading-relaxed text-petrol/60 mt-4">Leitura narrativa do percurso. O mapa técnico e
+            eventuais atualizações devem ser consultados na página oficial de percurso.</p>
+        </div>
+
+        <div class="reveal">
+          <p class="eyebrow text-petrol/60 mb-4">Percurso 21,097K</p>
+          <h2 class="display text-[clamp(52px,6.5vw,100px)]">A cidade faz parte da prova.</h2>
+          <p class="copy text-petrol/72 mt-7 max-w-[650px]">
+            A largada acontece no gramado da Arena das Dunas. O trajeto atravessa a BR-101, segue pelo viaduto de Ponta
+            Negra e alcança a Via Costeira, com o Morro do Careca no horizonte. A chegada volta a acontecer dentro da
+            Arena.
+          </p>
+          <div class="mt-9 grid gap-3" id="routeButtons">
+            <button class="route-button is-active" data-title="Arena das Dunas"
+              data-copy="Largada e chegada no estádio. É também onde se concentram a Expo, a entrega de kits e parte da programação do evento.">
+              <span class="eyebrow text-petrol/50">01 · início e chegada</span><strong
+                class="ui-title block text-[22px] mt-2">Arena das Dunas</strong>
+            </button>
+            <button class="route-button" data-title="Ponta Negra e Via Costeira"
+              data-copy="A meia avança em direção à Via Costeira, incorporando uma das paisagens mais reconhecidas de Natal ao percurso do atleta.">
+              <span class="eyebrow text-petrol/50">02 · cidade</span><strong
+                class="ui-title block text-[22px] mt-2">Ponta Negra e Via Costeira</strong>
+            </button>
+            <button class="route-button" data-title="Rota Musical"
+              data-copy="Atrações musicais acompanham pontos do percurso e conectam corrida e cultura potiguar sem interferir na leitura técnica da prova.">
+              <span class="eyebrow text-petrol/50">03 · cultura</span><strong
+                class="ui-title block text-[22px] mt-2">Rota Musical</strong>
+            </button>
+          </div>
+          <div class="mt-7 border-l-2 border-petrol pl-5">
+            <strong id="routeTitle" class="ui-title text-[22px]">Arena das Dunas</strong>
+            <p id="routeCopy" class="copy text-petrol/68 mt-2">Largada e chegada no estádio. É também onde se concentram
+              a Expo, a entrega de kits e parte da programação do evento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · MURAL / SOL APARECE -->
+    <section id="experiencia" class="section-pad bg-paper text-petrol relative overflow-hidden scroll-mt-24">
+      <div
+        class="absolute w-[310px] h-[310px] md:w-[520px] md:h-[520px] rounded-full bg-sun -right-24 -top-32 md:-right-24 md:-top-40"
+        aria-hidden="true"></div>
+      <div class="wrap relative z-10">
+        <div class="grid lg:grid-cols-[.85fr_1.15fr] gap-12 lg:gap-20 items-end mb-14">
+          <div class="reveal">
+            <p class="eyebrow text-orange mb-4">A experiência em imagens</p>
+            <h2 class="display text-[clamp(52px,6.3vw,94px)]">Quando o sol aparece, a Meia já está em movimento.</h2>
+          </div>
+          <p class="reveal copy text-petrol/68 max-w-[720px] lg:pb-2">
+            As imagens da Meia do Sol são registros reais do evento. Arena, chegada, família, Expo, crianças e marcas
+            fazem parte da mesma experiência — sem banco de imagens e sem encenação.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-12 auto-rows-[180px] md:auto-rows-[230px] gap-3 md:gap-5">
+          <figure class="photo-tile rounded-[22px] col-span-2 lg:col-span-7 row-span-2 reveal">
+            <img src="assets/arena-wide.jpg" alt="Arena das Dunas durante a Meia Maratona do Sol" />
+            <figcaption class="photo-caption"><strong class="ui-title text-[20px]">Arena das Dunas</strong><span
+                class="block text-white/70 mt-1">O palco da largada, da chegada e da Expo.</span></figcaption>
+          </figure>
+          <figure class="photo-tile rounded-[22px] col-span-1 lg:col-span-5 row-span-2 reveal">
+            <img src="assets/champion-clean.jpg" alt="Atleta cruzando a chegada da Meia do Sol" />
+            <figcaption class="photo-caption"><strong class="ui-title text-[20px]">Chegada</strong><span
+                class="block text-white/70 mt-1">O esforço aparece antes da celebração.</span></figcaption>
+          </figure>
+          <figure class="photo-tile rounded-[22px] col-span-1 lg:col-span-4 row-span-2 reveal">
+            <img src="assets/kids.jpg" alt="Crianças participando da Meia do Sol Kids" />
+            <figcaption class="photo-caption"><strong class="ui-title text-[20px]">Meia do Sol Kids</strong><span
+                class="block text-white/70 mt-1">Esporte como memória de família.</span></figcaption>
+          </figure>
+          <figure class="photo-tile rounded-[22px] col-span-1 lg:col-span-4 row-span-2 reveal">
+            <img src="assets/expo-crowd-clean.jpg" alt="Público circulando pela Expo Meia do Sol" />
+            <figcaption class="photo-caption"><strong class="ui-title text-[20px]">Expo</strong><span
+                class="block text-white/70 mt-1">Atletas, marcas, conteúdo e serviços na Arena.</span></figcaption>
+          </figure>
+          <figure class="photo-tile rounded-[22px] col-span-1 lg:col-span-4 row-span-2 reveal">
+            <img src="assets/selfie-clean.jpg" alt="Participantes registrando um momento na Meia do Sol" />
+            <figcaption class="photo-caption"><strong class="ui-title text-[20px]">Comunidade</strong><span
+                class="block text-white/70 mt-1">A experiência também é feita de encontros.</span></figcaption>
+          </figure>
+          <figure class="photo-tile rounded-[22px] col-span-2 lg:col-span-7 row-span-2 reveal">
+            <img src="assets/expo-brand-clean.jpg" alt="Ativação de marca durante a Expo Meia do Sol" />
+            <figcaption class="photo-caption"><strong class="ui-title text-[20px]">Marcas dentro da
+                experiência</strong><span class="block text-white/70 mt-1">Apoiadores encontram o atleta em momentos
+                úteis e relevantes.</span></figcaption>
+          </figure>
+          <figure class="photo-tile rounded-[22px] col-span-2 lg:col-span-5 row-span-2 reveal">
+            <img src="assets/medal-clean.jpg" alt="Medalha da Meia Maratona do Sol" />
+            <figcaption class="photo-caption"><strong class="ui-title text-[20px]">Conquista</strong><span
+                class="block text-white/70 mt-1">Um objeto que registra o que foi vivido.</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="mt-10 flex flex-wrap gap-x-8 gap-y-4">
+          <a href="#" class="text-link font-semibold text-[18px]">Conhecer a Expo <i class="ph ph-arrow-right"></i></a>
+          <a href="#" class="text-link font-semibold text-[18px]">Meia do Sol Kids <i class="ph ph-arrow-right"></i></a>
+          <a href="#" class="text-link font-semibold text-[18px]">Rota Musical <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · ESCALA E CREDENCIAIS -->
+    <section class="section-pad bg-night3 text-white">
+      <div class="wrap">
+        <div class="max-w-[900px] reveal">
+          <p class="eyebrow text-sun mb-4">Escala e reconhecimento</p>
+          <h2 class="display text-[clamp(52px,6.2vw,94px)]">Uma prova que cresceu sem perder o vínculo com Natal.</h2>
+        </div>
+        <div class="mt-14 grid md:grid-cols-2 xl:grid-cols-5 gap-px bg-white/15 border border-white/15">
+          <div class="bg-night3 p-7">
+            <div class="data text-[48px] text-sun">16 mil</div>
+            <p class="copy text-white/68 mt-3">atletas inscritos em 2025</p>
+          </div>
+          <div class="bg-night3 p-7">
+            <div class="data text-[48px] text-sun">60 mil</div>
+            <p class="copy text-white/68 mt-3">passagens pela Arena em quatro dias</p>
+          </div>
+          <div class="bg-night3 p-7">
+            <div class="ui-title text-[24px] text-sun">Road Race Label</div>
+            <p class="copy text-white/68 mt-3">World Athletics</p>
+          </div>
+          <div class="bg-night3 p-7">
+            <div class="ui-title text-[24px] text-sun">Selo Ouro</div>
+            <p class="copy text-white/68 mt-3">Confederação Brasileira de Atletismo</p>
+          </div>
+          <div class="bg-night3 p-7">
+            <div class="ui-title text-[24px] text-sun">Patrimônio do RN</div>
+            <p class="copy text-white/68 mt-3">Patrimônio Cultural Imaterial do estado</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · PREPARE-SE / CAMADA DE SERVIÇO -->
+    <section id="prepare-se" class="section-pad bg-white text-petrol scroll-mt-24">
+      <div class="wrap grid lg:grid-cols-[.75fr_1.25fr] gap-14 lg:gap-24 items-start">
+        <div class="reveal lg:sticky lg:top-32">
+          <p class="eyebrow text-orange mb-4">Para quem vai correr</p>
+          <h2 class="display text-[clamp(52px,6vw,90px)]">Tudo o que você precisa, no momento certo.</h2>
+          <p class="copy text-petrol/65 mt-7 max-w-[560px]">Na fase próxima ao evento, esta área assume prioridade na
+            home. A comunicação fica mais objetiva para que horários, documentos, deslocamento e kit sejam encontrados
+            sem esforço.</p>
+        </div>
+
+        <div class="reveal">
+          <a href="#" class="service-card flex gap-5 items-start text-petrol no-underline">
+            <i class="ph ph-book-open-text text-[30px] text-orange mt-1"></i>
+            <div class="flex-1"><strong class="ui-title text-[24px]">Guia do Atleta</strong>
+              <p class="copy text-petrol/62 mt-2">Orientações gerais, horários, serviços e informações importantes para
+                os dias do evento.</p>
+            </div>
+            <i class="ph ph-arrow-up-right text-[24px] mt-1"></i>
+          </a>
+          <a href="#" class="service-card flex gap-5 items-start text-petrol no-underline">
+            <i class="ph ph-t-shirt text-[30px] text-orange mt-1"></i>
+            <div class="flex-1"><strong class="ui-title text-[24px]">Retirada de kit</strong>
+              <p class="copy text-petrol/62 mt-2">Expo na Arena das Dunas, de 17 a 19 de setembro, das 9h às 20h.</p>
+            </div>
+            <i class="ph ph-arrow-up-right text-[24px] mt-1"></i>
+          </a>
+          <a href="#" class="service-card flex gap-5 items-start text-petrol no-underline">
+            <i class="ph ph-map-trifold text-[30px] text-orange mt-1"></i>
+            <div class="flex-1"><strong class="ui-title text-[24px]">Percursos e largadas</strong>
+              <p class="copy text-petrol/62 mt-2">Mapas técnicos, ondas, horários e atualizações específicas de cada
+                distância.</p>
+            </div>
+            <i class="ph ph-arrow-up-right text-[24px] mt-1"></i>
+          </a>
+          <a href="#" class="service-card flex gap-5 items-start text-petrol no-underline">
+            <i class="ph ph-bed text-[30px] text-orange mt-1"></i>
+            <div class="flex-1"><strong class="ui-title text-[24px]">Hospedagem em Natal</strong>
+              <p class="copy text-petrol/62 mt-2">Informações para quem vem de outras cidades e condições divulgadas
+                pelos hotéis parceiros.</p>
+            </div>
+            <i class="ph ph-arrow-up-right text-[24px] mt-1"></i>
+          </a>
+          <a href="#" class="service-card flex gap-5 items-start text-petrol no-underline border-b border-petrol/15">
+            <i class="ph ph-file-text text-[30px] text-orange mt-1"></i>
+            <div class="flex-1"><strong class="ui-title text-[24px]">Regulamento</strong>
+              <p class="copy text-petrol/62 mt-2">Regras oficiais de participação, categorias, documentação, premiação e
+                operação da prova.</p>
+            </div>
+            <i class="ph ph-arrow-up-right text-[24px] mt-1"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 · RESULTADOS / CONTINUIDADE -->
+    <section id="resultados" class="scene bg-orange text-petrol scroll-mt-24">
+      <div class="wrap py-24 md:py-32 grid lg:grid-cols-[1fr_.9fr] gap-16 items-center">
+        <div class="reveal">
+          <p class="eyebrow text-petrol/65 mb-4">Depois da chegada</p>
+          <h2 class="display text-[clamp(52px,6.7vw,102px)]">A experiência continua depois da prova.</h2>
+          <p class="copy text-petrol/72 mt-7 max-w-[690px]">Resultados, certificado, fotos e histórico de participação
+            devem estar reunidos no mesmo ambiente. O objetivo é facilitar a consulta e preservar a memória de cada
+            edição.</p>
+          <a href="#" class="button button-dark mt-8">Consultar resultados <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+
+        <div class="reveal bg-petrol text-white rounded-[28px] p-7 md:p-9">
+          <div class="flex items-center justify-between gap-5 pb-6 border-b border-white/15">
+            <div><span class="eyebrow text-white/45">Exemplo de resultado</span><strong
+                class="ui-title block text-[24px] mt-2">21,097K · 2026</strong></div>
+            <i class="ph-duotone ph-medal text-[42px] text-sun"
+              style="--ph-duotone-secondary-color:#FF6600;--ph-duotone-secondary-opacity:1"></i>
+          </div>
+          <div class="grid grid-cols-2 gap-5 mt-7">
+            <div><span class="eyebrow text-white/45">Tempo líquido</span><strong
+                class="mono block text-[30px] md:text-[38px] mt-2">01:52:31</strong></div>
+            <div><span class="eyebrow text-white/45">Pace médio</span><strong
+                class="mono block text-[30px] md:text-[38px] mt-2">05:20</strong></div>
+          </div>
+          <p class="copy text-white/64 mt-8">No produto final, os dados serão pessoais e vinculados ao histórico real do
+            atleta.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 · PATROCINADORES -->
+    <section id="patrocinadores" class="section-pad bg-[#F4F1E8] text-petrol scroll-mt-24">
+      <div class="wrap">
+        <div class="max-w-[900px] reveal">
+          <p class="eyebrow text-orange mb-4">Parceiros 2026</p>
+          <h2 class="display text-[clamp(50px,6vw,88px)]">Quem faz a Meia do Sol acontecer.</h2>
+          <p class="copy text-petrol/65 mt-7 max-w-[720px]">Patrocinadores, chancelas e realizadores fazem parte da
+            experiência. A apresentação das marcas recebe espaço próprio, com hierarquia definida pelas cotas e sem
+            competir com as informações do atleta.</p>
+        </div>
+
+        <div class="mt-14 bg-white border border-petrol/10 rounded-[26px] p-8 md:p-12 reveal">
+          <p class="eyebrow text-petrol/45 text-center">Naming Rights</p>
+          <div class="min-h-[130px] flex items-center justify-center mt-4">
+            <img src="https://meiadosol.com.br/wp-content/themes/meiadosol-wp/dist/assets/img/marcas/sicredi-2024.png"
+              alt="Sicredi" class="max-w-[300px] w-[62%] h-auto" />
+          </div>
+        </div>
+
+        <div class="mt-10">
+          <p class="eyebrow text-petrol/45 mb-5">Patrocínio</p>
+          <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-3">
+            <div class="partner-wordmark">Iskisita Atakado</div>
+            <div class="partner-wordmark">Prefeitura do Natal</div>
+            <div class="partner-wordmark">Selfit Academias</div>
+            <div class="partner-wordmark">EL Aram Hotéis</div>
+            <div class="partner-wordmark">Café Santa Clara</div>
+            <div class="partner-wordmark">Viver Saúde</div>
+            <div class="partner-wordmark">Yopp</div>
+            <div class="partner-wordmark">Sebrae</div>
+            <div class="partner-wordmark">Água Mineral Cristalina</div>
+            <div class="partner-wordmark">Fecomércio</div>
+          </div>
+        </div>
+
+        <div class="mt-12 grid lg:grid-cols-[1fr_.7fr] gap-10 lg:gap-16 items-start border-t border-petrol/15 pt-10">
+          <div>
+            <p class="eyebrow text-petrol/45 mb-5">Chancelas</p>
+            <div class="flex flex-wrap gap-3">
+              <span class="border border-petrol/15 bg-white px-5 py-4 font-bold text-[18px]">World Athletics · Road Race
+                Label</span>
+              <span class="border border-petrol/15 bg-white px-5 py-4 font-bold text-[18px]">CBAt · Selo Ouro</span>
+              <span class="border border-petrol/15 bg-white px-5 py-4 font-bold text-[18px]">FNA</span>
+            </div>
+          </div>
+          <div>
+            <p class="eyebrow text-petrol/45 mb-5">Realização</p>
+            <div class="bg-white border border-petrol/10 min-h-[110px] flex items-center justify-center px-8">
+              <img src="assets/hc-sports.png" alt="HC Sports" class="max-w-[240px]" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER / MAPA DO SITE -->
+  <footer class="bg-petrol text-white pt-20 pb-10">
+    <div class="wrap">
+      <div class="grid lg:grid-cols-[1.1fr_2fr] gap-14 lg:gap-24 pb-16">
+        <div>
+          <div class="flex items-center gap-4">
+            <img src="assets/logo-mark.png" alt="" class="w-14 h-14" />
+            <div><span class="display text-[18px]">Meia Maratona do Sol</span><span
+                class="block text-[14px] uppercase tracking-[.12em] text-white/50 mt-1">Natal · Rio Grande do
+                Norte</span></div>
+          </div>
+          <p class="copy text-white/60 mt-7 max-w-[500px]">Site oficial para acompanhar provas, preparação, programação,
+            resultados e os demais pontos de contato da Meia do Sol.</p>
+          <div class="mt-7 flex gap-4 text-[24px]">
+            <a href="#" aria-label="Instagram" class="footer-link"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" aria-label="YouTube" class="footer-link"><i class="ph ph-youtube-logo"></i></a>
+          </div>
+        </div>
+
+        <nav aria-label="Mapa do site" class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10">
+          <div>
+            <h3 class="ui-title text-[18px] mb-5">Provas</h3>
+            <div class="grid gap-3 text-[18px]"><a class="footer-link" href="#provas">5K</a><a class="footer-link"
+                href="#provas">10K</a><a class="footer-link" href="#provas">21K</a><a class="footer-link"
+                href="#provas">Desafio 26K</a><a class="footer-link" href="#provas">Desafio 31K</a></div>
+          </div>
+          <div>
+            <h3 class="ui-title text-[18px] mb-5">Prepare-se</h3>
+            <div class="grid gap-3 text-[18px]"><a class="footer-link" href="#prepare-se">Guia do Atleta</a><a
+                class="footer-link" href="#prepare-se">Retirada do kit</a><a class="footer-link"
+                href="#percurso">Percursos</a><a class="footer-link" href="#prepare-se">Hospedagem</a><a
+                class="footer-link" href="#prepare-se">Regulamento</a></div>
+          </div>
+          <div>
+            <h3 class="ui-title text-[18px] mb-5">Experiência</h3>
+            <div class="grid gap-3 text-[18px]"><a class="footer-link" href="#experiencia">Expo</a><a
+                class="footer-link" href="#experiencia">Rota Musical</a><a class="footer-link" href="#experiencia">Meia
+                do Sol Kids</a><a class="footer-link" href="#experiencia">Arena das Dunas</a><a class="footer-link"
+                href="#experiencia">Natal</a></div>
+          </div>
+          <div>
+            <h3 class="ui-title text-[18px] mb-5">Meia do Sol</h3>
+            <div class="grid gap-3 text-[18px]"><a class="footer-link" href="#">Sobre o evento</a><a class="footer-link"
+                href="#resultados">Resultados</a><a class="footer-link" href="#patrocinadores">Parceiros</a><a
+                class="footer-link" href="#">Notícias</a><a class="footer-link" href="#">Contato</a></div>
+          </div>
+        </nav>
+      </div>
+
+      <div
+        class="border-t border-white/12 pt-7 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-[14px] text-white/45">
+        <span>© 2026 Meia Maratona do Sol · Todos os direitos reservados.</span>
+        <div class="flex flex-wrap gap-5"><a href="#" class="footer-link">Privacidade</a><a href="#"
+            class="footer-link">Termos de uso</a><a href="#" class="footer-link">Acessibilidade</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta fixed inset-x-0 bottom-0 z-40 bg-petrol border-t border-white/10 p-3 sm:hidden">
+    <a id="mobileContextCta" href="#prepare-se" class="button button-primary w-full"><span id="mobileContextLabel">Guia
+        do atleta</span><i class="ph ph-arrow-up-right"></i></a>
+  </div>
+
+  <script>
+    const header = document.getElementById('siteHeader');
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    const updateHeader = () => header.classList.toggle('is-solid', window.scrollY > 24);
+    updateHeader();
+    addEventListener('scroll', updateHeader, { passive: true });
+
+    menuBtn?.addEventListener('click', () => {
+      const open = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!open));
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.querySelector('i').className = open ? 'ph ph-list text-2xl' : 'ph ph-x text-2xl';
+    });
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.querySelector('i').className = 'ph ph-list text-2xl';
+    }));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: .14 });
+    document.querySelectorAll('.reveal,.route-visual').forEach(el => observer.observe(el));
+
+    const dawnSection = document.querySelector('.scene.bg-night');
+    const sunDisc = document.getElementById('sunDisc');
+    const moveSun = () => {
+      if (!dawnSection || !sunDisc || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const r = dawnSection.getBoundingClientRect();
+      const vh = innerHeight;
+      const progress = Math.max(0, Math.min(1, (vh - r.top) / (vh + r.height)));
+      sunDisc.style.transform = `translateY(${-progress * 110}px)`;
+    };
+    moveSun();
+    addEventListener('scroll', moveSun, { passive: true });
+
+    const routeTitle = document.getElementById('routeTitle');
+    const routeCopy = document.getElementById('routeCopy');
+    document.querySelectorAll('.route-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.route-button').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        routeTitle.textContent = btn.dataset.title;
+        routeCopy.textContent = btn.dataset.copy;
+      });
+    });
+
+    // A ação principal acompanha a fase real do evento sem mudar a arquitetura do site.
+    const now = new Date();
+    const y = 2026;
+    const openEnd = new Date(y, 7, 31, 23, 59, 59);      // 31 ago
+    const expoStart = new Date(y, 8, 17, 0, 0, 0);      // 17 set
+    const raceEnd = new Date(y, 8, 20, 23, 59, 59);     // 20 set
+    let label = 'Inscrições 2026', href = '#provas';
+    if (now > openEnd && now < expoStart) { label = 'Guia do atleta'; href = '#prepare-se'; }
+    else if (now >= expoStart && now <= raceEnd) { label = 'Programação'; href = '#prepare-se'; }
+    else if (now > raceEnd) { label = 'Resultados'; href = '#resultados'; }
+    document.getElementById('contextCtaLabel').textContent = label;
+    document.getElementById('contextCta').href = href;
+    document.getElementById('mobileContextLabel').textContent = label;
+    document.getElementById('mobileContextCta').href = href;
+  </script>
+</body>
+
+</html>
